@@ -19,6 +19,7 @@ interface CaseStudy {
   textColor: string;
   accentColor: string;
   tag: string;
+  process?: string[];
 }
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -26,10 +27,10 @@ const caseStudies: CaseStudy[] = [
   {
     id: 1,
     number: "01",
-    title: "Creating BFSI conversations that go beyond the event floor",
+    title: "Managing the complete operating journey behind BFSI events",
     category: "Event Marketing · Brand Visibility · CXO Engagement",
     categoryTags: ["Event Marketing", "Brand Visibility", "CXO Engagement"],
-    summary: "Planned and coordinated national and international BFSI events designed to position the brand in front of senior decision-makers, industry partners and enterprise audiences.",
+    summary: "Planned and executed national and international BFSI corporate events involving senior decision-makers, partners and industry leaders — from audience selection and communication to vendors, branding, logistics and on-ground execution.",
     challenge: "An event presence needed to deliver more than visibility. It had to create a clear narrative, attract the right audience and support meaningful business conversations.",
     contributions: ["Event and audience evaluation", "Campaign and communication planning", "Speaker and partner coordination", "Social media promotion", "Email communication", "Branding and collateral coordination", "Vendor and logistics management", "On-ground execution", "Post-event communication"],
     impact: "Managed approximately 4–6 national and international corporate events annually while supporting brand visibility, stakeholder engagement and relationship-building.",
@@ -42,12 +43,12 @@ const caseStudies: CaseStudy[] = [
   {
     id: 2,
     number: "02",
-    title: "Turning a complex technology offering into a clear marketing story",
-    category: "Product Marketing · Content · Integrated Campaigns",
-    categoryTags: ["Product Marketing", "Content", "Integrated Campaigns"],
-    summary: "Developed communication for B2B technology and CRM offerings across website pages, social campaigns, email outreach, presentations, videos and event assets.",
+    title: "Making complex technology communication clear and relevant",
+    category: "Content · B2B Communication · Integrated Campaigns",
+    categoryTags: ["Content", "B2B Communication", "Integrated Campaigns"],
+    summary: "Developed communication content for B2B technology offerings across website pages, email campaigns, social media, presentations, event assets and stakeholder communication.",
     challenge: "Complex technology offerings can quickly become feature-heavy. The communication needed to be relevant to business audiences and focused on practical value.",
-    contributions: ["Product positioning", "Audience-focused messaging", "Website content", "Social media communication", "Email campaign content", "Presentation development", "Brochure and collateral content", "Video scripts", "Coordination with sales, product and design teams"],
+    contributions: ["Audience-focused messaging", "Website content", "Social media communication", "Email campaign content", "Presentation development", "Brochure and collateral content", "Video scripts", "Coordination with sales and design teams"],
     impact: "Translated product capabilities into business challenges, customer outcomes and clear reasons to engage — making the technology understandable and the value memorable.",
     color: "#FF6B5E",
     textColor: "#fff",
@@ -57,14 +58,14 @@ const caseStudies: CaseStudy[] = [
   {
     id: 3,
     number: "03",
-    title: "Building an organic growth engine",
+    title: "Coordinating SEO, content and website growth",
     category: "SEO · Website · Content Strategy",
     categoryTags: ["SEO", "Website", "Content Strategy"],
     summary: "Led coordinated SEO, content and website optimisation initiatives to improve organic visibility and support marketing-led demand generation.",
     challenge: "Needed to improve organic search performance sustainably without relying on paid channels, while aligning content to real business audience needs.",
     contributions: ["SEO planning", "Website content optimisation", "Service and solution page development", "Keyword and competitor research", "Search performance monitoring", "Analytics review", "Vendor management", "Internal coordination", "Website improvement planning"],
-    impact: "30% increase in website traffic through SEO, content and website optimisation across 12+ months of consistent effort.",
-    tools: ["SEMrush", "Google Analytics", "Google Search Console", "Microsoft Clarity"],
+    impact: "Drove a 30% increase in website traffic through SEO, content and website optimisation across 12+ months of consistent effort.",
+    tools: ["SEMrush", "Google Analytics", "Google Search Console"],
     metric: "30% traffic growth",
     color: "#C7F36B",
     textColor: "#171717",
@@ -77,10 +78,10 @@ const caseStudies: CaseStudy[] = [
     title: "Designing email journeys that earn attention",
     category: "Email Marketing · Segmentation · Automation",
     categoryTags: ["Email Marketing", "Segmentation", "Automation"],
-    summary: "Managed segmented B2B email campaigns and nurture workflows designed to improve relevance, engagement and sales follow-up.",
+    summary: "Managed segmented B2B email campaigns and nurture workflows at Ambit Software, achieving 25–30% open rates and 3–5% CTR. Also managed US-market email campaigns at Outkreate with 15–20% open rates and 2–4% CTR.",
     challenge: "B2B email audiences are saturated. Getting consistent open rates and meaningful click-throughs required genuine relevance and strategic sequence design.",
     contributions: ["Audience segmentation", "Campaign planning", "Email messaging", "Subject-line development", "CTA strategy", "Nurture sequence planning", "Workflow coordination", "CRM campaign management", "Performance analysis", "Campaign optimisation"],
-    impact: "25–30% average open rate and 3–5% average click-through rate across B2B email campaigns — consistently above industry benchmarks.",
+    impact: "Ambit: 25–30% average open rate · 3–5% CTR. Outkreate (US market): 15–20% open rate · 2–4% CTR — consistently above industry benchmarks.",
     tools: ["HubSpot", "Sugar Market", "SugarCRM", "Brevo", "Apollo"],
     metric: "25–30% open rate",
     color: "#171717",
@@ -91,12 +92,12 @@ const caseStudies: CaseStudy[] = [
   {
     id: 5,
     number: "05",
-    title: "The marketing operations behind the visible campaign",
+    title: "Managing the operational foundation behind integrated marketing",
     category: "Budget · Vendors · Planning · Governance",
     categoryTags: ["Budget", "Vendors", "Planning", "Governance"],
-    summary: "Managed the operational foundation required to deliver integrated marketing programmes across campaigns, SEO, events, PR and brand initiatives.",
+    summary: "Managed the operational foundation required to deliver integrated marketing programmes — covering SEO, paid campaigns, events, PR and brand-building activities including vendor evaluation and management.",
     challenge: "Marketing operations often go unnoticed — but without them, campaigns stall, vendors underdeliver and budgets drift. The challenge was building structure without slowing execution.",
-    contributions: ["Annual budget planning", "Vendor identification", "Proposal evaluation", "Agency comparison", "Commercial negotiation", "Scope assessment", "Timeline management", "Performance monitoring", "Stakeholder reporting", "Cross-functional coordination"],
+    contributions: ["Annual budget planning (₹60L)", "Vendor identification and evaluation", "Proposal and agency comparison", "Commercial negotiation", "Scope assessment", "Timeline management", "Performance monitoring", "Stakeholder reporting", "Cross-functional coordination"],
     impact: "Managed ₹60L annual marketing budget while coordinating vendors, timelines and cross-functional teams across all marketing programmes.",
     metric: "₹60L budget managed",
     color: "#3D5AFE",
@@ -107,10 +108,10 @@ const caseStudies: CaseStudy[] = [
   {
     id: 6,
     number: "06",
-    title: "Building webinar campaigns for an international audience",
+    title: "Coordinating webinar campaigns for international audiences",
     category: "Webinars · US Market · Content Marketing",
     categoryTags: ["Webinars", "US Market", "Content Marketing"],
-    summary: "Planned and supported webinar marketing initiatives for US audiences, covering prospect outreach, registrations, communication, participation and follow-up.",
+    summary: "Managed webinar marketing initiatives for US audiences, covering prospect outreach, registrations, communication, participation scheduling, engagement and follow-up for 100+ targeted invitees.",
     challenge: "Reaching a US audience from India required precise targeting, time-zone-aware communication and campaigns that felt locally relevant.",
     contributions: ["Target audience outreach", "Webinar invitation campaign", "Registration coordination", "Reminder communication", "Participant engagement", "Speaker and schedule coordination", "Post-event follow-up", "Campaign reporting", "Supporting content development"],
     impact: "Supported lead generation, client engagement and meeting acquisition through coordinated webinar and content campaigns for 100+ targeted invitees.",
@@ -119,6 +120,22 @@ const caseStudies: CaseStudy[] = [
     textColor: "#171717",
     accentColor: "#3D5AFE",
     tag: "100+ TARGETED INVITEES",
+  },
+  {
+    id: 7,
+    number: "07",
+    title: "Turning client requirements into structured creative delivery",
+    category: "Account Management · Client Success · Creative Coordination",
+    categoryTags: ["Account Management", "Client Success", "Creative Coordination"],
+    summary: "Managed client accounts and ongoing projects for the US market at Outkreate, acting as the primary point of contact between clients and internal design teams — from requirement gathering through to final approved delivery.",
+    challenge: "Bridging client expectations and internal creative execution required clear communication, structured briefing and consistent follow-through across multiple simultaneous projects.",
+    contributions: ["Requirement gathering", "Creative brief development", "Client communication management", "Design-team coordination", "Timeline follow-up", "Revision management", "Approval coordination", "Final delivery"],
+    impact: "Ensured smooth project delivery across US client accounts by maintaining clear briefs, managing revisions and coordinating internal teams — supporting client satisfaction and account growth.",
+    process: ["Client Requirement", "Creative Brief", "Internal Coordination", "Design Review", "Revisions", "Approval", "Final Delivery"],
+    color: "#C7B8FF",
+    textColor: "#171717",
+    accentColor: "#171717",
+    tag: "REQUIREMENT TO DELIVERY",
   },
 ];
 
@@ -135,14 +152,51 @@ const galleryItems = [
 ];
 
 const expertiseCards = [
-  { title: "Integrated Marketing", desc: "Connecting content, campaigns, events, digital channels and sales priorities into one coordinated marketing plan.", color: "#3D5AFE", textColor: "#fff", span: "col-span-2" },
-  { title: "Corporate Communications", desc: "Developing clear, consistent communication for leadership, partners, customers, events and digital audiences.", color: "#C7B8FF", textColor: "#171717", span: "" },
-  { title: "Event Marketing", desc: "Managing the complete journey from audience strategy and event branding to stakeholder coordination and on-ground execution.", color: "#FF6B5E", textColor: "#fff", span: "" },
-  { title: "Content & Brand Storytelling", desc: "Turning business ideas into relevant website content, campaigns, presentations, case studies, emails and social communication.", color: "#F7F2E8", textColor: "#171717", span: "" },
-  { title: "SEO & Website Growth", desc: "Improving discoverability through content optimisation, search insights, analytics and continuous website improvement.", color: "#C7F36B", textColor: "#171717", span: "" },
-  { title: "Email & Demand Generation", desc: "Creating segmented campaigns and nurture journeys designed around audience context, engagement and action.", color: "#171717", textColor: "#C7B8FF", span: "" },
-  { title: "Marketing Operations", desc: "Managing budgets, vendors, timelines, reporting and cross-functional execution behind marketing programmes.", color: "#FF6B5E", textColor: "#fff", span: "col-span-2" },
-  { title: "CRM & Automation", desc: "Supporting campaign workflows, audience segmentation, lead nurturing and performance visibility through marketing platforms.", color: "#3D5AFE", textColor: "#fff", span: "col-span-2" },
+  {
+    title: "Integrated Marketing",
+    desc: "Connecting digital campaigns, content, email, events, websites and sales priorities through coordinated marketing planning.",
+    color: "#3D5AFE", textColor: "#fff", span: "col-span-2"
+  },
+  {
+    title: "Marketing Operations",
+    desc: "Managing timelines, vendors, budgets, deliverables, approvals and reporting behind multiple marketing initiatives.",
+    color: "#C7F36B", textColor: "#171717", span: ""
+  },
+  {
+    title: "Corporate Communications",
+    desc: "Creating consistent communication for leadership, partners, customers, events and external audiences.",
+    color: "#FF6B5E", textColor: "#fff", span: ""
+  },
+  {
+    title: "Corporate Event Management",
+    desc: "Planning and executing national and international BFSI events across audience targeting, vendors, branding, logistics and on-ground delivery.",
+    color: "#C7B8FF", textColor: "#171717", span: ""
+  },
+  {
+    title: "Content & Campaign Communication",
+    desc: "Developing messaging and content for websites, emails, social media, presentations, events and campaign collateral.",
+    color: "#F7F2E8", textColor: "#171717", span: ""
+  },
+  {
+    title: "SEO & Website Growth",
+    desc: "Coordinating SEO, content and website improvements to increase visibility and support lead generation.",
+    color: "#171717", textColor: "#C7F36B", span: ""
+  },
+  {
+    title: "CRM & Marketing Automation",
+    desc: "Managing segmented email campaigns, nurture workflows, campaign data and performance reporting using marketing platforms.",
+    color: "#3D5AFE", textColor: "#fff", span: ""
+  },
+  {
+    title: "Stakeholder & Vendor Coordination",
+    desc: "Aligning internal teams, sales, leadership, partners, agencies and vendors to maintain communication and execution quality.",
+    color: "#FF6B5E", textColor: "#fff", span: ""
+  },
+  {
+    title: "Account Management & Client Success",
+    desc: "Managing client requirements, coordinating internal teams and maintaining clear communication throughout project delivery. Supporting client satisfaction, long-term relationships and account growth.",
+    color: "#C7B8FF", textColor: "#171717", span: "col-span-2"
+  },
 ];
 
 const journeyData = [
@@ -150,7 +204,7 @@ const journeyData = [
     company: "AMBIT SOFTWARE",
     role: "Marketing Manager",
     period: "November 2023 – Present",
-    desc: "Leading integrated marketing and corporate communications across digital campaigns, SEO, content, CRM, website management, brand visibility and corporate events.",
+    desc: "Lead integrated marketing and corporate communications across digital campaigns, SEO, CRM, websites, content, corporate events and brand visibility. Manage an annual marketing budget of approximately ₹60 lakh and coordinate communication among leadership, sales, cross-functional teams, vendors, partners and event stakeholders. Plan and deliver 4–6 national and international BFSI events annually and oversee email nurture campaigns achieving average open rates of 25–30% and click-through rates of 3–5%.",
     tags: ["BFSI", "B2B Technology", "Events", "SEO", "CRM", "Communications"],
     color: "#3D5AFE",
   },
@@ -158,7 +212,7 @@ const journeyData = [
     company: "OUTKREATE",
     role: "Marketing Manager",
     period: "April 2022 – October 2023",
-    desc: "Led content marketing, webinars, email campaigns and account coordination for the US market while acting as a bridge between clients and creative teams.",
+    desc: "Led content marketing, email campaigns, webinars and account coordination for the US market. Managed client requirements and acted as the primary bridge between clients and internal design teams, coordinating briefs, project timelines, revisions, approvals and final outputs.",
     tags: ["US Market", "Webinars", "Content", "Email", "Client Coordination"],
     color: "#FF6B5E",
   },
@@ -166,7 +220,7 @@ const journeyData = [
     company: "MIT SCHOOL OF DISTANCE EDUCATION",
     role: "Educational Sales Consultant",
     period: "August 2020 – November 2021",
-    desc: "Managed lead engagement, counselling, CRM communication, webinars and conversion support for prospective students.",
+    desc: "Managed consultative engagement with approximately 100–150 prospective student leads per month across counselling, programme guidance, conversion support and onboarding. Coordinated CRM campaigns, webinars and follow-up communication while providing post-sales support and relationship management.",
     tags: ["Lead Engagement", "CRM", "Webinars", "Customer Experience"],
     color: "#C7B8FF",
   },
@@ -174,16 +228,16 @@ const journeyData = [
     company: "COMPREHENSIVE SUPPORT SERVICES",
     role: "Pre-Sales Executive",
     period: "December 2019 – June 2020",
-    desc: "Supported lead qualification, requirement gathering, presentations, proposals, CRM reporting and coordination between sales and technical teams.",
+    desc: "Supported lead qualification, customer engagement, requirement gathering, proposals, presentations, CRM reporting and coordination between sales and technical teams.",
     tags: ["Pre-Sales", "Proposals", "CRM", "Coordination"],
     color: "#C7F36B",
   },
 ];
 
 const toolGroups = [
-  { label: "Campaigns & CRM", tools: ["HubSpot", "Sugar Market", "SugarCRM", "Apollo", "Brevo"], color: "#3D5AFE" },
-  { label: "Analytics & SEO", tools: ["SEMrush", "Google Analytics", "Google Search Console", "Microsoft Clarity"], color: "#C7F36B" },
-  { label: "Content & Creative", tools: ["Canva", "HubSpot", "Sugar Market", "Brevo", "Apollo"], color: "#FF6B5E" },
+  { label: "CRM & Campaigns", tools: ["HubSpot", "Sugar Market", "SugarCRM", "Apollo", "Brevo"], color: "#3D5AFE" },
+  { label: "SEO & Analytics", tools: ["SEMrush", "Google Analytics", "Google Search Console"], color: "#C7F36B" },
+  { label: "Content & Creative", tools: ["Canva"], color: "#FF6B5E" },
 ];
 
 const galleryCategories = ["All", "Social Media", "Events", "Email", "Website", "Presentations", "Content", "Campaigns"];
@@ -289,10 +343,11 @@ function Nav() {
   const scrolled = useScrolled();
   const [open, setOpen] = useState(false);
   const links = [
-    { label: "About", id: "about" },
-    { label: "Work", id: "work" },
-    { label: "Expertise", id: "expertise" },
     { label: "Journey", id: "journey" },
+    { label: "Tools", id: "tools" },
+    { label: "About", id: "about" },
+    { label: "SWOT", id: "swot" },
+    { label: "Education", id: "education" },
     { label: "Contact", id: "contact" },
   ];
   return (
@@ -358,7 +413,7 @@ function Nav() {
               </button>
             ))}
             <div className="flex gap-3 pt-2">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+              <a href="https://linkedin.com/in/shreya-kavthale" target="_blank" rel="noopener noreferrer"
                 className="px-4 py-2 rounded-full text-sm border"
                 style={{ fontFamily: "'DM Sans', sans-serif", borderColor: "rgba(23,23,23,0.2)", color: "#171717" }}>
                 LinkedIn
@@ -417,18 +472,18 @@ function Portrait() {
         </div>
       </div>
 
-      {/* Floating labels */}
-      <FloatingLabel text="Integrated Marketing" style={{ top: "20px", right: "0px", background: "#3D5AFE", color: "#fff" }} delay={0.8} />
-      <FloatingLabel text="BFSI Events" style={{ top: "100px", right: "-20px", background: "#FF6B5E", color: "#fff" }} delay={1.0} />
-      <FloatingLabel text="Corporate Comms" style={{ bottom: "110px", right: "-10px", background: "#171717", color: "#C7F36B" }} delay={1.2} />
-      <FloatingLabel text="SEO & Content" style={{ bottom: "50px", left: "0px", background: "#C7F36B", color: "#171717" }} delay={1.1} />
-      <FloatingLabel text="Marketing Ops" style={{ top: "170px", left: "-20px", background: "#C7B8FF", color: "#171717" }} delay={0.9} />
-      <FloatingLabel text="CRM & Automation" style={{ top: "60px", left: "10px", background: "#fff", color: "#3D5AFE" }} delay={1.3} />
+      {/* Floating labels — updated per brief */}
+      <FloatingLabel text="Marketing Operations" style={{ top: "20px", right: "0px", background: "#3D5AFE", color: "#fff" }} delay={0.8} />
+      <FloatingLabel text="Integrated Marketing" style={{ top: "100px", right: "-20px", background: "#FF6B5E", color: "#fff" }} delay={1.0} />
+      <FloatingLabel text="Corporate Communications" style={{ bottom: "110px", right: "-10px", background: "#171717", color: "#C7F36B" }} delay={1.2} />
+      <FloatingLabel text="SEO & Digital Growth" style={{ bottom: "50px", left: "0px", background: "#C7F36B", color: "#171717" }} delay={1.1} />
+      <FloatingLabel text="CRM & Campaigns" style={{ top: "170px", left: "-20px", background: "#C7B8FF", color: "#171717" }} delay={0.9} />
+      <FloatingLabel text="Corporate Events" style={{ top: "60px", left: "10px", background: "#fff", color: "#3D5AFE" }} delay={1.3} />
 
-      {/* Handwritten annotation */}
+      {/* Handwritten annotation — updated quote */}
       <div className="absolute" style={{ top: "-10px", left: "50%", transform: "translateX(-90%) rotate(-5deg)", zIndex: 11, whiteSpace: "nowrap" }}>
         <span style={{ fontFamily: "Georgia, serif", fontStyle: "italic", fontSize: "12px", color: "#FF6B5E" }}>
-          {"\"Strategy is only powerful when it moves.\""}
+          {'"Strong marketing connects the message, the people and the execution."'}
         </span>
       </div>
 
@@ -449,47 +504,60 @@ function Hero() {
         backgroundImage: "radial-gradient(#171717 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
 
       <div className="max-w-7xl mx-auto">
+        {/* Eyebrow — updated */}
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}
           className="inline-flex items-center gap-2 mb-8">
           <span className="w-7 h-[1.5px]" style={{ background: "#FF6B5E" }} />
           <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.22em", color: "#FF6B5E" }}>
-            MARKETING · COMMUNICATION · GROWTH
+            MARKETING OPERATIONS · CORPORATE COMMUNICATIONS · INTEGRATED MARKETING
           </span>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left */}
           <div>
+            {/* Headline — updated with styled segments */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.25, duration: 0.7 }}
-              style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(34px, 4.5vw, 60px)", fontWeight: 900, lineHeight: 1.1, color: "#171717", marginBottom: "24px" }}
+              style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(34px, 4.5vw, 60px)", fontWeight: 900, lineHeight: 1.2, color: "#171717", marginBottom: "24px" }}
             >
-              I turn complex ideas into{" "}
-              <span className="relative inline-block">
-                <span style={{ color: "#3D5AFE" }}>clear stories</span>
-                <svg className="absolute left-0 -bottom-0.5 w-full" height="5" viewBox="0 0 100 5" preserveAspectRatio="none">
-                  <path d="M0,3 Q25,0 50,3 T100,2" stroke="#3D5AFE" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-                </svg>
-              </span>
-              ,{" "}
-              <mark style={{ background: "#C7F36B", padding: "0 5px", borderRadius: "4px", color: "#171717" }}>connected campaigns</mark>
-              {" "}and{" "}
-              <span style={{ color: "#FF6B5E" }}>measurable momentum</span>
-              <span style={{ color: "#FF6B5E" }}>.</span>
+              {"I bring "}
+              {/* "structure to marketing" — cobalt, CSS underline (no SVG width bug) */}
+              <span style={{
+                color: "#3D5AFE",
+                textDecoration: "underline",
+                textDecorationColor: "#3D5AFE",
+                textDecorationThickness: "3px",
+                textUnderlineOffset: "6px",
+              }}>{"structure to marketing"}</span>
+              {", "}
+              {/* "clarity to communication" — lime pill highlight */}
+              <span style={{
+                background: "#C7F36B",
+                color: "#171717",
+                padding: "2px 8px",
+                borderRadius: "6px",
+                display: "inline",
+              }}>{"clarity to communication"}</span>
+              {" and "}
+              {/* "consistency to execution" — coral */}
+              <span style={{ color: "#FF6B5E" }}>{"consistency to execution."}</span>
             </motion.h1>
 
+            {/* Intro — updated */}
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.38 }}
               style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", lineHeight: 1.75, color: "rgba(23,23,23,0.65)", maxWidth: "530px", marginBottom: "14px" }}>
-              Hi, {"I'm"} Shreya — a Marketing Manager with 6+ years of experience working across integrated marketing, corporate communications, B2B campaigns, BFSI events, content, SEO and marketing operations.
+              Hi, {"I'm"} Shreya — a Marketing Manager with 6+ years of experience leading integrated marketing and corporate communications across B2B technology, BFSI, education and IT services.
             </motion.p>
 
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.46 }}
               style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", lineHeight: 1.75, color: "rgba(23,23,23,0.65)", maxWidth: "530px", marginBottom: "32px" }}>
-              I work where brand, demand, communication and execution meet — bringing teams, channels and ideas together to create marketing that moves the business forward.
+              My work spans campaigns, corporate events, SEO, websites, CRM, content, vendor management and stakeholder engagement. I connect internal teams, external partners and marketing channels to ensure that ideas move from requirement to effective execution.
             </motion.p>
 
+            {/* CTAs — updated */}
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55 }}
               className="flex flex-wrap gap-3 mb-8">
               <button onClick={() => scrollTo("work")}
@@ -497,11 +565,11 @@ function Hero() {
                 style={{ background: "#171717", color: "#F7F2E8", fontFamily: "'DM Sans', sans-serif" }}>
                 Explore My Work <ArrowRight size={15} />
               </button>
-              <a href="https://linkedin.com/in/shreya-kavthale" target="_blank" rel="noopener noreferrer"
+              <button onClick={() => scrollTo("journey")}
                 className="flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border transition-opacity hover:opacity-70"
                 style={{ borderColor: "#3D5AFE", color: "#3D5AFE", fontFamily: "'DM Sans', sans-serif" }}>
-                Connect on LinkedIn
-              </a>
+                View My Journey
+              </button>
             </motion.div>
 
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.65 }}
@@ -534,7 +602,7 @@ function Philosophy() {
   const R = 130, cx = 160, cy = 160;
 
   return (
-    <section id="about" className="py-24 px-6" style={{ background: "#F7F2E8" }}>
+    <section className="py-24 px-6" style={{ background: "#F7F2E8" }}>
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -663,11 +731,13 @@ function Metrics() {
           <div className="rounded-2xl p-6" style={{ background: "#C7B8FF" }}>
             <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.16em", color: "rgba(23,23,23,0.45)", marginBottom: "10px" }}>EMAIL OPEN RATE</div>
             <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 900, fontSize: "30px", color: "#171717" }}>25–30%</div>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "rgba(23,23,23,0.5)", marginTop: "4px" }}>At Ambit Software</p>
           </div>
 
           <div className="rounded-2xl p-6" style={{ background: "rgba(247,242,232,0.06)", border: "1px solid rgba(247,242,232,0.08)" }}>
             <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.16em", color: "rgba(247,242,232,0.35)", marginBottom: "10px" }}>EMAIL CTR</div>
             <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 900, fontSize: "30px", color: "#F7F2E8" }}>3–5%</div>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "rgba(247,242,232,0.35)", marginTop: "4px" }}>At Ambit Software</p>
           </div>
 
           <div className="col-span-2 rounded-2xl p-6" style={{ background: "rgba(247,242,232,0.04)", border: "1px solid rgba(247,242,232,0.06)" }}>
@@ -730,27 +800,44 @@ function CaseStudyModal({ study, onClose }: { study: CaseStudy; onClose: () => v
             <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.18em", color: "#FF6B5E", marginBottom: "10px" }}>CHALLENGE</p>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", lineHeight: 1.75, color: "rgba(23,23,23,0.75)" }}>{study.challenge}</p>
           </div>
+
+          {/* Process flow for Project 07 */}
+          {study.process && (
+            <div>
+              <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.18em", color: "#C7B8FF", marginBottom: "14px" }}>PROCESS</p>
+              <div className="flex flex-wrap items-center gap-2">
+                {study.process.map((step, i) => (
+                  <div key={step} className="flex items-center gap-2">
+                    <span className="px-3 py-1.5 rounded-full text-xs font-bold" style={{ background: "#171717", color: "#F7F2E8", fontFamily: "'Manrope', sans-serif" }}>
+                      {step}
+                    </span>
+                    {i < study.process!.length - 1 && (
+                      <ArrowRight size={14} color="rgba(23,23,23,0.3)" />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           <div>
-            <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.18em", color: "#171717", marginBottom: "12px" }}>MY ROLE & DELIVERABLES</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.18em", color: "#171717", marginBottom: "12px" }}>CONTRIBUTIONS</p>
+            <div className="flex flex-wrap gap-2">
               {study.contributions.map((c) => (
-                <div key={c} className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[7px]" style={{ background: "#C7F36B" }} />
-                  <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "rgba(23,23,23,0.7)" }}>{c}</span>
-                </div>
+                <Tag key={c} style={{ background: "rgba(23,23,23,0.06)", color: "#171717" }}>{c}</Tag>
               ))}
             </div>
           </div>
-          <div className="rounded-2xl p-6" style={{ background: "#171717" }}>
-            <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.18em", color: "#C7F36B", marginBottom: "10px" }}>OUTCOME</p>
+          <div className="rounded-2xl p-5" style={{ background: "#171717" }}>
+            <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.18em", color: "#C7F36B", marginBottom: "8px" }}>IMPACT</p>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", lineHeight: 1.75, color: "rgba(247,242,232,0.8)" }}>{study.impact}</p>
           </div>
           {study.tools && (
             <div>
-              <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.18em", color: "#171717", marginBottom: "10px" }}>TOOLS</p>
+              <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.18em", color: "rgba(23,23,23,0.35)", marginBottom: "10px" }}>TOOLS USED</p>
               <div className="flex flex-wrap gap-2">
                 {study.tools.map((t) => (
-                  <span key={t} className="px-3 py-1.5 rounded-full text-sm font-semibold" style={{ background: "#3D5AFE", color: "#fff", fontFamily: "'DM Sans', sans-serif" }}>{t}</span>
+                  <Tag key={t} style={{ background: "#3D5AFE", color: "#fff" }}>{t}</Tag>
                 ))}
               </div>
             </div>
@@ -761,49 +848,36 @@ function CaseStudyModal({ study, onClose }: { study: CaseStudy; onClose: () => v
   );
 }
 
-function WorkCard({ study, onOpen, index }: { study: CaseStudy; onOpen: (s: CaseStudy) => void; index: number }) {
-  const isEven = index % 2 === 1;
+function WorkCard({ study, index, onOpen }: { study: CaseStudy; index: number; onOpen: (s: CaseStudy) => void }) {
+  const isEven = index % 2 === 0;
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20 lg:mb-28"
+      transition={{ delay: 0.06 }}
+      className={`grid lg:grid-cols-2 gap-12 items-center mb-24 ${isEven ? "" : "lg:flex-row-reverse"}`}
     >
       {/* Visual */}
-      <div className={isEven ? "lg:order-2" : ""}>
-        <div className="relative rounded-3xl overflow-hidden group" style={{ height: "380px", background: study.color, cursor: "pointer" }} onClick={() => onOpen(study)}>
-          <div className="absolute top-6 left-6 z-10">
-            <span className="px-3 py-1.5 rounded-full text-[10px] font-bold tracking-[0.15em]"
-              style={{ background: "rgba(0,0,0,0.12)", color: study.textColor === "#fff" ? "rgba(255,255,255,0.8)" : "rgba(23,23,23,0.6)", fontFamily: "'Manrope', sans-serif" }}>
+      <div className={`relative rounded-3xl overflow-hidden cursor-pointer group ${isEven ? "" : "lg:order-2"}`}
+        style={{ background: study.color, minHeight: "380px" }}
+        onClick={() => onOpen(study)}>
+        <div className="w-full h-full flex flex-col items-center justify-center p-8" style={{ minHeight: "380px" }}>
+          <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "80px", fontWeight: 900, color: study.textColor === "#fff" ? "rgba(255,255,255,0.08)" : "rgba(23,23,23,0.06)", lineHeight: 1 }}>
+            {study.number}
+          </span>
+          <div className="mt-4 px-4 py-2 rounded-full" style={{ background: study.accentColor }}>
+            <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.16em", color: study.accentColor === "#171717" ? "#C7F36B" : study.accentColor === "#C7F36B" ? "#171717" : "#fff" }}>
               {study.tag}
             </span>
           </div>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 900, fontSize: "clamp(60px, 10vw, 110px)", color: study.textColor, opacity: 0.07 }}>
-              {study.number}
-            </span>
-          </div>
-          {study.metric && (
-            <div className="absolute bottom-6 right-6 px-4 py-2 rounded-xl" style={{ background: study.accentColor }}>
-              <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, color: study.accentColor === "#171717" ? "#C7F36B" : study.accentColor === "#C7F36B" ? "#171717" : "#fff" }}>
-                {study.metric}
-              </span>
-            </div>
-          )}
-          <div className="absolute bottom-6 left-6 flex flex-wrap gap-1.5" style={{ maxWidth: "65%" }}>
-            {study.categoryTags.map((t) => (
-              <Tag key={t} style={{ background: "rgba(0,0,0,0.14)", color: study.textColor === "#fff" ? "rgba(255,255,255,0.8)" : "rgba(23,23,23,0.65)" }}>{t}</Tag>
-            ))}
-          </div>
-          {/* Hover overlay */}
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-            style={{ background: "rgba(23,23,23,0.15)" }}>
-            <span className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold" style={{ background: "#F7F2E8", color: "#171717", fontFamily: "'DM Sans', sans-serif" }}>
-              See the Story <ArrowRight size={14} />
-            </span>
-          </div>
+        </div>
+        {/* Hover overlay */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+          style={{ background: "rgba(23,23,23,0.15)" }}>
+          <span className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold" style={{ background: "#F7F2E8", color: "#171717", fontFamily: "'DM Sans', sans-serif" }}>
+            See the Story <ArrowRight size={14} />
+          </span>
         </div>
       </div>
 
@@ -845,7 +919,7 @@ function Work() {
             Work that connects strategy with execution.
           </h2>
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "rgba(23,23,23,0.55)", maxWidth: "520px", lineHeight: 1.7 }}>
-            A selection of campaigns, programmes and marketing initiatives across events, digital, content, SEO, communication and operations.
+            A selection of campaigns, programmes and marketing initiatives across events, digital, content, SEO, communication, client delivery and operations.
           </p>
         </motion.div>
         {caseStudies.map((s, i) => <WorkCard key={s.id} study={s} index={i} onOpen={setActive} />)}
@@ -938,8 +1012,9 @@ function Expertise() {
       <div className="max-w-7xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
           <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.22em", color: "#FF6B5E" }}>EXPERTISE</span>
+          {/* Updated heading */}
           <h2 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(28px, 4vw, 52px)", fontWeight: 900, lineHeight: 1.1, color: "#171717", margin: "14px 0 12px" }}>
-            What I bring to the table
+            What I manage across the marketing function
           </h2>
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "rgba(23,23,23,0.55)" }}>
             A mix of strategy, communication, execution and operational discipline.
@@ -960,7 +1035,7 @@ function Expertise() {
               <h3 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "15px", fontWeight: 800, color: card.textColor, marginBottom: "10px" }}>
                 {card.title}
               </h3>
-              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", lineHeight: 1.65, color: card.textColor === "#fff" ? "rgba(255,255,255,0.7)" : "rgba(23,23,23,0.6)" }}>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", lineHeight: 1.65, color: card.textColor === "#fff" ? "rgba(255,255,255,0.7)" : card.textColor === "#C7F36B" ? "rgba(23,23,23,0.7)" : "rgba(23,23,23,0.6)" }}>
                 {card.desc}
               </p>
             </motion.div>
@@ -1030,13 +1105,14 @@ function Journey() {
 // ─── Tools ────────────────────────────────────────────────────────────────────
 function ToolsRow({ tools, color, reverse }: { tools: string[]; color: string; reverse: boolean }) {
   const textColor = color === "#C7F36B" || color === "#C7B8FF" ? "#171717" : "#fff";
-  const allTools = [...tools, ...tools, ...tools, ...tools, ...tools];
+  // Repeat tools enough times for a seamless scroll
+  const repeated = [...tools, ...tools, ...tools, ...tools, ...tools, ...tools, ...tools, ...tools];
   return (
     <div className="overflow-hidden py-2">
       <motion.div className="flex items-center"
         animate={{ x: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
         transition={{ duration: 22, repeat: Infinity, ease: "linear" }}>
-        {allTools.map((tool, i) => (
+        {repeated.map((tool, i) => (
           <span key={i} className="inline-flex items-center px-5 py-2.5 rounded-full font-semibold text-sm mr-4 flex-shrink-0"
             style={{ background: color, color: textColor, fontFamily: "'Manrope', sans-serif" }}>
             {tool}
@@ -1049,7 +1125,7 @@ function ToolsRow({ tools, color, reverse }: { tools: string[]; color: string; r
 
 function Tools() {
   return (
-    <section className="py-24 overflow-hidden" style={{ background: "#F7F2E8" }}>
+    <section id="tools" className="py-24 overflow-hidden" style={{ background: "#F7F2E8" }}>
       <div className="max-w-7xl mx-auto px-6 mb-12">
         <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.22em", color: "#3D5AFE" }}>TOOLS & PLATFORMS</span>
         <h2 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(24px, 3.5vw, 44px)", fontWeight: 900, lineHeight: 1.1, color: "#171717", marginTop: "14px" }}>
@@ -1081,20 +1157,23 @@ function About() {
     { label: "CONTENT CREATION", color: "#C7F36B", tc: "#171717" },
   ];
   return (
-    <section className="py-24 px-6" style={{ background: "#C7B8FF" }}>
+    <section id="about" className="py-24 px-6" style={{ background: "#C7B8FF" }}>
       <div className="max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.22em", color: "rgba(23,23,23,0.45)" }}>ABOUT</span>
+          {/* Updated heading */}
           <h2 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(26px, 4vw, 48px)", fontWeight: 900, lineHeight: 1.1, color: "#171717", margin: "14px 0 32px" }}>
-            Curious about the audience.<br />Serious about the outcome.
+            I work where marketing ideas<br />meet operational execution.
           </h2>
           <div className="grid lg:grid-cols-2 gap-12">
+            {/* Updated copy */}
             <div className="space-y-4">
               {[
-                "I have always been drawn to the space where ideas, people and execution come together.",
-                "Over the last six years, I have worked across marketing, communications, customer engagement, content, campaigns and events. That experience has taught me that successful marketing is rarely the result of one big idea. It comes from understanding the audience, creating a relevant message and making sure every moving part works together.",
-                "I enjoy bringing structure to complex initiatives, turning business requirements into clear communication and working with different teams to move an idea from discussion to delivery.",
-                "Whether I am developing a campaign, planning an event, improving a website, evaluating a vendor or coordinating a launch, I bring the same approach: understand the purpose, simplify the message and execute with intent.",
+                "I began my career through customer engagement, pre-sales support and consultative communication before moving deeper into digital and integrated marketing.",
+                "Over the last six years, I have worked across content, email marketing, social media, webinars, client coordination, corporate communications, events, websites, SEO, CRM and marketing operations.",
+                "At Outkreate, I managed US-focused campaigns and client projects, acting as the link between client requirements and internal creative teams. This strengthened my ability to translate business expectations into clear briefs, manage revisions and follow projects through to delivery.",
+                "At Ambit Software, my scope expanded across integrated marketing, corporate communications, BFSI events, digital campaigns, website growth, CRM, vendors and stakeholder engagement. I now manage the operational coordination behind multiple marketing workstreams while supporting brand visibility, lead generation and sales-pipeline growth.",
+                "My experience across B2B technology, BFSI, education and IT services has helped me understand different audiences, business models and customer journeys. It allows me to adapt the communication and execution approach while keeping the objective clear.",
               ].map((para, i) => (
                 <p key={i} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", lineHeight: 1.8, color: "rgba(23,23,23,0.72)" }}>{para}</p>
               ))}
@@ -1119,13 +1198,107 @@ function About() {
   );
 }
 
+// ─── Professional SWOT (new section) ─────────────────────────────────────────
+function SWOT() {
+  const quadrants = [
+    {
+      label: "STRENGTHS",
+      color: "#3D5AFE",
+      textColor: "#fff",
+      accentColor: "rgba(255,255,255,0.15)",
+      icon: "↑",
+      copy: "My strongest capabilities lie in implementation, marketing operations and execution. I am skilled at coordinating people, processes, campaigns and events while ensuring that requirements move towards timely delivery. I am also a quick learner who can understand new industries, technologies and business concepts and translate them into effective content, website updates and creative direction.",
+    },
+    {
+      label: "DEVELOPMENT AREAS",
+      color: "#FF6B5E",
+      textColor: "#fff",
+      accentColor: "rgba(255,255,255,0.15)",
+      icon: "→",
+      copy: "I am continuously working on strengthening my professional vocabulary and communicating complex ideas more precisely. At times, I may need additional time to understand unfamiliar requirements, become impatient when progress is delayed or feel nervous when an issue does not have an immediate solution.",
+    },
+    {
+      label: "OPPORTUNITIES",
+      color: "#C7F36B",
+      textColor: "#171717",
+      accentColor: "rgba(23,23,23,0.08)",
+      icon: "◇",
+      copy: "I see strong opportunities in learning emerging marketing tools, AI platforms, automation techniques and analytics capabilities. Strengthening my strategic planning, data interpretation and leadership communication will help me complement my execution expertise and progress into broader marketing roles.",
+    },
+    {
+      label: "THREATS",
+      color: "#171717",
+      textColor: "#F7F2E8",
+      accentColor: "rgba(247,242,232,0.07)",
+      icon: "△",
+      copy: "Rapid changes in marketing technology and increasing competition make continuous learning essential. There is also a risk of being perceived mainly as an execution-focused professional, making it important to demonstrate my leadership, strategic contribution and measurable business impact.",
+    },
+  ];
+
+  return (
+    <section id="swot" className="py-24 px-6" style={{ background: "#F7F2E8" }}>
+      <div className="max-w-7xl mx-auto">
+        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
+          <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.22em", color: "#FF6B5E" }}>PROFESSIONAL SWOT</span>
+          <h2 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(28px, 4vw, 52px)", fontWeight: 900, lineHeight: 1.1, color: "#171717", margin: "14px 0 12px" }}>
+            Understanding How I Work and Grow
+          </h2>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "rgba(23,23,23,0.55)", maxWidth: "560px", lineHeight: 1.7 }}>
+            A clear understanding of my strengths, development areas and future opportunities helps me continuously improve as a marketing professional.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-4 mb-6">
+          {quadrants.map((q, i) => (
+            <motion.div
+              key={q.label}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+              className="rounded-3xl p-8 transition-transform hover:-translate-y-1 hover:shadow-xl"
+              style={{ background: q.color, minHeight: "220px" }}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0"
+                  style={{ background: q.accentColor, color: q.textColor, fontFamily: "'Manrope', sans-serif" }}>
+                  {q.icon}
+                </span>
+                <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.2em", color: q.textColor === "#fff" ? "rgba(255,255,255,0.6)" : "rgba(23,23,23,0.45)" }}>
+                  {q.label}
+                </span>
+              </div>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", lineHeight: 1.75, color: q.textColor === "#fff" ? "rgba(255,255,255,0.8)" : q.textColor === "#F7F2E8" ? "rgba(247,242,232,0.75)" : "rgba(23,23,23,0.72)" }}>
+                {q.copy}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Summary statement */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="rounded-2xl p-6 text-center"
+          style={{ background: "#171717" }}
+        >
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", lineHeight: 1.75, color: "rgba(247,242,232,0.7)", maxWidth: "640px", margin: "0 auto" }}>
+            My goal is to build on my strength in execution while continuously developing the strategic, communication and leadership capabilities required for broader marketing roles.
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 // ─── Education ────────────────────────────────────────────────────────────────
 function Education() {
   const certs = ["HubSpot Social Media Certification", "HubSpot Email Marketing Certification", "Digital Marketing Certification from LIPS India"];
   return (
-    <section className="py-20 px-6" style={{ background: "#F7F2E8" }}>
+    <section id="education" className="py-20 px-6" style={{ background: "#F7F2E8" }}>
       <div className="max-w-5xl mx-auto">
-        <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.22em", color: "#FF6B5E", display: "block", marginBottom: "24px" }}>EDUCATION</span>
+        <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.22em", color: "#FF6B5E", display: "block", marginBottom: "24px" }}>EDUCATION & CERTIFICATIONS</span>
         <div className="grid md:grid-cols-3 gap-4">
           {[
             { degree: "MBA IN MARKETING", school: "MIT World Peace University", year: "2017–2019" },
@@ -1202,7 +1375,7 @@ function Footer() {
     <footer className="px-6 py-8" style={{ background: "#171717", borderTop: "1px solid rgba(247,242,232,0.06)" }}>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
         <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "rgba(247,242,232,0.35)", textAlign: "center" }}>
-          Strategy with clarity. Communication with purpose. Execution with momentum.
+          Structure with clarity. Communication with purpose. Execution with consistency.
         </p>
         <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "rgba(247,242,232,0.2)" }}>
           © Shreya Kavthale
@@ -1239,7 +1412,7 @@ function BackToTop() {
 
 // ─── App ──────────────────────────────────────────────────────────────────────
 export default function App() {
-  const marqueeItems = ["BRAND STORYTELLING", "CAMPAIGNS", "EVENTS", "CONTENT", "SEO", "CRM", "GROWTH", "COMMUNICATIONS", "BFSI MARKETING"];
+  const marqueeItems = ["MARKETING OPERATIONS", "CORPORATE COMMUNICATIONS", "INTEGRATED MARKETING", "BFSI EVENTS", "SEO & GROWTH", "CRM & CAMPAIGNS", "CONTENT", "STAKEHOLDER MANAGEMENT"];
 
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
@@ -1257,9 +1430,11 @@ export default function App() {
       <Work />
       <Gallery />
       <Expertise />
+      {/* New section order: Journey → Tools → About → SWOT → Education → Contact */}
       <Journey />
       <Tools />
       <About />
+      <SWOT />
       <Education />
       <Contact />
       <Footer />
