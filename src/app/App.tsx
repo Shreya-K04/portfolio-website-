@@ -140,15 +140,45 @@ const caseStudies: CaseStudy[] = [
 ];
 
 const galleryItems = [
-  { category: "Events", title: "BFSI Summit Announcement", obj: "Brand visibility at industry summit", channel: "Social Media", year: "2024", color: "#C7B8FF" },
-  { category: "Social Media", title: "Product Feature Campaign", obj: "B2B product awareness", channel: "LinkedIn", year: "2024", color: "#FF6B5E" },
-  { category: "Email", title: "Nurture Email Sequence", obj: "Lead nurturing & engagement", channel: "Email", year: "2023", color: "#3D5AFE" },
-  { category: "Website", title: "Service Page Rewrite", obj: "Organic traffic growth", channel: "Website", year: "2024", color: "#C7F36B" },
-  { category: "Presentations", title: "Executive Stakeholder Deck", obj: "Senior stakeholder communication", channel: "Internal", year: "2023", color: "#171717" },
-  { category: "Content", title: "B2B Case Study Series", obj: "Thought leadership & trust-building", channel: "Content", year: "2024", color: "#C7B8FF" },
-  { category: "Campaigns", title: "Product Launch Campaign", obj: "Market entry & demand creation", channel: "Integrated", year: "2023", color: "#FF6B5E" },
-  { category: "Events", title: "Webinar Registration Drive", obj: "US market lead generation", channel: "Email + Social", year: "2023", color: "#3D5AFE" },
-  { category: "Social Media", title: "Speaker Announcement Post", obj: "Event promotion & credibility", channel: "LinkedIn", year: "2024", color: "#C7F36B" },
+  {
+    category: "Events", title: "BFSI Summit Announcement",
+    obj: "Brand visibility at industry summit", channel: "Social Media", year: "2024", color: "#C7B8FF",
+    tags: ["#ambitsoftware", "#sugarcrm", "#bfsiitsummit2025", "#nexafin", "#cxtransformation", "#agenticai", "#agenticai", "#cxleadership", "#enterpriseai"],
+    link: "https://www.linkedin.com/company/ambit-software/",
+  },
+  {
+    category: "Email", title: "Nurture Email Sequence",
+    obj: "Lead nurturing & engagement", channel: "Email", year: "2023", color: "#3D5AFE",
+    image: "/images/nurture-email.jpg",
+  },
+  {
+    category: "Website", title: "Service Page Rewrite",
+    obj: "Organic traffic growth", channel: "Website", year: "2024", color: "#C7F36B",
+    subtext: "Banking CRM Software | AI-Powered CRM for Banks | nexaFIN",
+    link: "https://www.ambitsoftware.com/",
+  },
+  {
+    category: "Content", title: "B2B Case Study Series",
+    obj: "Thought leadership & trust-building", channel: "Content", year: "2024", color: "#C7B8FF",
+    link: "https://www.ambitsoftware.com/casestudies/#",
+  },
+  {
+    category: "Campaigns", title: "Product Launch Campaign",
+    obj: "Market entry & demand creation", channel: "Integrated", year: "2023", color: "#FF6B5E",
+    image: "/images/project-07.jpg",
+    link: "https://www.ambitsoftware.com/brochure/",
+  },
+  {
+    category: "Events", title: "Webinar Registration Drive",
+    obj: "US market lead generation", channel: "Email + Social", year: "2023", color: "#3D5AFE",
+    link: "https://www.linkedin.com/posts/outkreate_investordays-investordaypresentations-investorrelations-ac",
+  },
+  {
+    category: "Social Media", title: "Speaker Announcement Post",
+    obj: "Event promotion & credibility", channel: "LinkedIn", year: "2024", color: "#C7F36B",
+    tags: ["#bfsitechsummit2026", "#ambitsoftware", "#sugarai", "#bfsi", "#agenticai", "#exitobfsisingapore", "#bfsiitsummit2025", "#digitalbanking"],
+    link: "https://www.linkedin.com/company/ambit-software/",
+  },
 ];
 
 const expertiseCards = [
@@ -240,7 +270,7 @@ const toolGroups = [
   { label: "Content & Creative", tools: ["Canva"], color: "#FF6B5E" },
 ];
 
-const galleryCategories = ["All", "Social Media", "Events", "Email", "Website", "Presentations", "Content", "Campaigns"];
+const galleryCategories = ["All", "Social Media", "Events", "Email", "Website", "Content", "Campaigns"];
 
 // ─── Hooks ────────────────────────────────────────────────────────────────────
 function useScrolled() {
@@ -848,8 +878,60 @@ function CaseStudyModal({ study, onClose }: { study: CaseStudy; onClose: () => v
   );
 }
 
-function WorkCard({ study, index, onOpen }: { study: CaseStudy; index: number; onOpen: (s: CaseStudy) => void }) {
+// Image map for case studies that have project images
+const studyImages: Record<number, string> = {
+  1: "/images/project-01.jpg",
+  3: "/images/project-03.jpg",
+  4: "/images/project-04.jpg",
+  5: "/images/project-05.jpg",
+  7: "/images/project-07.jpg",
+};
+
+// Full-image lightbox for work section
+function WorkImageLightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  useEffect(() => {
+    const h = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", h);
+    return () => window.removeEventListener("keydown", h);
+  }, [onClose]);
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+      style={{ background: "rgba(23,23,23,0.96)", backdropFilter: "blur(16px)" }}
+      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.88 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.88 }}
+        transition={{ type: "spring", stiffness: 300, damping: 28 }}
+        className="relative flex flex-col items-center w-full max-w-5xl"
+      >
+        <button
+          onClick={onClose}
+          className="absolute -top-12 right-0 p-2 rounded-full hover:opacity-70 transition-opacity"
+          style={{ background: "rgba(247,242,232,0.12)" }}
+        >
+          <X size={22} color="#F7F2E8" />
+        </button>
+        <div className="w-full rounded-2xl overflow-auto" style={{ maxHeight: "88vh" }}>
+          <img
+            src={src}
+            alt={alt}
+            style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}
+          />
+        </div>
+        <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "rgba(247,242,232,0.35)", marginTop: "12px" }}>
+          Press Esc or click outside to close
+        </p>
+      </motion.div>
+    </div>
+  );
+}
+
+function WorkCard({ study, index, onOpen, onViewImage }: { study: CaseStudy; index: number; onOpen: (s: CaseStudy) => void; onViewImage: (src: string, alt: string) => void }) {
   const isEven = index % 2 === 0;
+  const projectImage = studyImages[study.id];
   return (
     <motion.div
       initial={{ opacity: 0, y: 32 }}
@@ -858,26 +940,61 @@ function WorkCard({ study, index, onOpen }: { study: CaseStudy; index: number; o
       transition={{ delay: 0.06 }}
       className={`grid lg:grid-cols-2 gap-12 items-center mb-24 ${isEven ? "" : "lg:flex-row-reverse"}`}
     >
-      {/* Visual */}
-      <div className={`relative rounded-3xl overflow-hidden cursor-pointer group ${isEven ? "" : "lg:order-2"}`}
+      {/* Visual — clicking image opens full-image lightbox */}
+      <div
+        className={`relative rounded-3xl overflow-hidden cursor-pointer group ${isEven ? "" : "lg:order-2"}`}
         style={{ background: study.color, minHeight: "380px" }}
-        onClick={() => onOpen(study)}>
-        <div className="w-full h-full flex flex-col items-center justify-center p-8" style={{ minHeight: "380px" }}>
-          <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "80px", fontWeight: 900, color: study.textColor === "#fff" ? "rgba(255,255,255,0.08)" : "rgba(23,23,23,0.06)", lineHeight: 1 }}>
-            {study.number}
-          </span>
-          <div className="mt-4 px-4 py-2 rounded-full" style={{ background: study.accentColor }}>
-            <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.16em", color: study.accentColor === "#171717" ? "#C7F36B" : study.accentColor === "#C7F36B" ? "#171717" : "#fff" }}>
-              {study.tag}
+        onClick={() => projectImage ? onViewImage(projectImage, study.title) : onOpen(study)}
+      >
+        {projectImage ? (
+          <>
+            <img
+              src={projectImage}
+              alt={study.title}
+              style={{ width: "100%", height: "100%", minHeight: "380px", objectFit: "cover", objectPosition: "top", display: "block" }}
+            />
+            {/* Tag overlay at bottom */}
+            <div className="absolute bottom-0 left-0 right-0 px-6 py-4" style={{ background: "linear-gradient(to top, rgba(23,23,23,0.85) 0%, transparent 100%)" }}>
+              <div className="inline-block px-4 py-2 rounded-full" style={{ background: study.accentColor }}>
+                <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.16em", color: study.accentColor === "#171717" ? "#C7F36B" : study.accentColor === "#C7F36B" ? "#171717" : "#fff" }}>
+                  {study.tag}
+                </span>
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className="w-full h-full flex flex-col items-center justify-center p-8" style={{ minHeight: "380px" }}>
+            <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "80px", fontWeight: 900, color: study.textColor === "#fff" ? "rgba(255,255,255,0.08)" : "rgba(23,23,23,0.06)", lineHeight: 1 }}>
+              {study.number}
             </span>
+            <div className="mt-4 px-4 py-2 rounded-full" style={{ background: study.accentColor }}>
+              <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.16em", color: study.accentColor === "#171717" ? "#C7F36B" : study.accentColor === "#C7F36B" ? "#171717" : "#fff" }}>
+                {study.tag}
+              </span>
+            </div>
           </div>
-        </div>
+        )}
         {/* Hover overlay */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-          style={{ background: "rgba(23,23,23,0.15)" }}>
-          <span className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold" style={{ background: "#F7F2E8", color: "#171717", fontFamily: "'DM Sans', sans-serif" }}>
-            See the Story <ArrowRight size={14} />
-          </span>
+        <div
+          className="absolute inset-0 flex flex-col items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300"
+          style={{ background: "rgba(23,23,23,0.55)" }}
+        >
+          {projectImage ? (
+            <>
+              <span className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold"
+                style={{ background: "#F7F2E8", color: "#171717", fontFamily: "'DM Sans', sans-serif" }}>
+                View Full Image
+              </span>
+              <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "rgba(247,242,232,0.55)" }}>
+                Click to expand
+              </span>
+            </>
+          ) : (
+            <span className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold"
+              style={{ background: "#F7F2E8", color: "#171717", fontFamily: "'DM Sans', sans-serif" }}>
+              See the Story <ArrowRight size={14} />
+            </span>
+          )}
         </div>
       </div>
 
@@ -898,11 +1015,20 @@ function WorkCard({ study, index, onOpen }: { study: CaseStudy; index: number; o
             <Tag style={{ background: "rgba(23,23,23,0.06)", color: "rgba(23,23,23,0.45)" }}>+{study.contributions.length - 5} more</Tag>
           )}
         </div>
-        <button onClick={() => onOpen(study)}
-          className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all hover:gap-4"
-          style={{ background: "#171717", color: "#F7F2E8", fontFamily: "'DM Sans', sans-serif" }}>
-          See the Story <ArrowRight size={14} />
-        </button>
+        <div className="flex flex-wrap gap-3">
+          <button onClick={() => onOpen(study)}
+            className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all hover:gap-4"
+            style={{ background: "#171717", color: "#F7F2E8", fontFamily: "'DM Sans', sans-serif" }}>
+            See the Story <ArrowRight size={14} />
+          </button>
+          {projectImage && (
+            <button onClick={() => onViewImage(projectImage, study.title)}
+              className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all hover:opacity-75"
+              style={{ border: "1.5px solid rgba(23,23,23,0.22)", color: "#171717", fontFamily: "'DM Sans', sans-serif", background: "transparent" }}>
+              View Image
+            </button>
+          )}
+        </div>
       </div>
     </motion.div>
   );
@@ -910,6 +1036,7 @@ function WorkCard({ study, index, onOpen }: { study: CaseStudy; index: number; o
 
 function Work() {
   const [active, setActive] = useState<CaseStudy | null>(null);
+  const [imageView, setImageView] = useState<{ src: string; alt: string } | null>(null);
   return (
     <section id="work" className="py-24 px-6" style={{ background: "#F7F2E8" }}>
       <div className="max-w-7xl mx-auto">
@@ -922,20 +1049,135 @@ function Work() {
             A selection of campaigns, programmes and marketing initiatives across events, digital, content, SEO, communication, client delivery and operations.
           </p>
         </motion.div>
-        {caseStudies.map((s, i) => <WorkCard key={s.id} study={s} index={i} onOpen={setActive} />)}
+        {caseStudies.map((s, i) => (
+          <WorkCard
+            key={s.id}
+            study={s}
+            index={i}
+            onOpen={setActive}
+            onViewImage={(src, alt) => setImageView({ src, alt })}
+          />
+        ))}
       </div>
       <AnimatePresence>
         {active && <CaseStudyModal study={active} onClose={() => setActive(null)} />}
+      </AnimatePresence>
+      <AnimatePresence>
+        {imageView && (
+          <WorkImageLightbox
+            src={imageView.src}
+            alt={imageView.alt}
+            onClose={() => setImageView(null)}
+          />
+        )}
       </AnimatePresence>
     </section>
   );
 }
 
 // ─── Gallery ──────────────────────────────────────────────────────────────────
+interface GalleryItem {
+  category: string;
+  title: string;
+  obj: string;
+  channel: string;
+  year: string;
+  color: string;
+  image?: string;
+  link?: string;
+  tags?: string[];
+  subtext?: string;
+}
+
+function GalleryLightbox({ item, onClose }: { item: GalleryItem; onClose: () => void }) {
+  useEffect(() => {
+    const h = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", h);
+    return () => window.removeEventListener("keydown", h);
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+      style={{ background: "rgba(23,23,23,0.92)", backdropFilter: "blur(12px)" }}
+      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9, y: 24 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.9, y: 24 }}
+        transition={{ type: "spring", stiffness: 280, damping: 26 }}
+        className="relative flex flex-col items-center max-w-4xl w-full"
+      >
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className="absolute top-0 right-0 -mt-12 p-2 rounded-full hover:opacity-70 transition-opacity z-10"
+          style={{ background: "rgba(247,242,232,0.15)" }}
+        >
+          <X size={20} color="#F7F2E8" />
+        </button>
+
+        {/* Header */}
+        <div className="w-full mb-4 flex items-center justify-between">
+          <div>
+            <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.16em", color: "#C7F36B" }}>
+              {item.category.toUpperCase()} · {item.year}
+            </span>
+            <h3 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "20px", fontWeight: 800, color: "#F7F2E8", marginTop: "4px" }}>{item.title}</h3>
+          </div>
+          {item.link && (
+            <a
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold hover:opacity-80 transition-opacity"
+              style={{ background: "#3D5AFE", color: "#fff", fontFamily: "'DM Sans', sans-serif" }}
+            >
+              View Live <ExternalLink size={13} />
+            </a>
+          )}
+        </div>
+
+        {/* Image or color card */}
+        {item.image ? (
+          <div className="w-full rounded-2xl overflow-hidden" style={{ maxHeight: "75vh" }}>
+            <img
+              src={item.image}
+              alt={item.title}
+              style={{ width: "100%", height: "100%", objectFit: "contain", display: "block", maxHeight: "75vh" }}
+            />
+          </div>
+        ) : (
+          <div className="w-full rounded-2xl p-10 flex flex-col items-center justify-center gap-4" style={{ background: item.color, minHeight: "320px" }}>
+            <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "28px", fontWeight: 900, color: "rgba(23,23,23,0.2)" }}>{item.category.toUpperCase()}</span>
+            <h4 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "22px", fontWeight: 800, color: "#171717", textAlign: "center" }}>{item.title}</h4>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "rgba(23,23,23,0.65)", textAlign: "center" }}>{item.obj}</p>
+            {item.subtext && (
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "rgba(23,23,23,0.55)", textAlign: "center" }}>{item.subtext}</p>
+            )}
+            {item.tags && (
+              <div className="flex flex-wrap justify-center gap-2 mt-2">
+                {item.tags.map((tag) => (
+                  <span key={tag} className="px-3 py-1 rounded-full text-xs font-medium"
+                    style={{ background: "rgba(23,23,23,0.12)", color: "rgba(23,23,23,0.7)", fontFamily: "'DM Sans', sans-serif" }}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+      </motion.div>
+    </div>
+  );
+}
+
 function Gallery() {
   const [filter, setFilter] = useState("All");
   const [hovered, setHovered] = useState<number | null>(null);
-  const filtered = filter === "All" ? galleryItems : galleryItems.filter((g) => g.category === filter);
+  const [lightbox, setLightbox] = useState<GalleryItem | null>(null);
+  const filtered = filter === "All" ? (galleryItems as GalleryItem[]) : (galleryItems as GalleryItem[]).filter((g) => g.category === filter);
   return (
     <section className="py-24 px-6" style={{ background: "#F7F2E8" }}>
       <div className="max-w-7xl mx-auto">
@@ -969,31 +1211,66 @@ function Gallery() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="relative rounded-2xl overflow-hidden cursor-pointer"
+              className="relative rounded-2xl overflow-hidden cursor-pointer group"
               style={{ height: idx % 5 === 0 ? "290px" : "210px", background: item.color }}
               onMouseEnter={() => setHovered(idx)}
               onMouseLeave={() => setHovered(null)}
+              onClick={() => setLightbox(item)}
             >
-              <div className="w-full h-full flex items-center justify-center">
-                <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.18em", color: "rgba(23,23,23,0.15)" }}>
-                  {item.category.toUpperCase()}
-                </span>
-              </div>
+              {/* Background image or color placeholder */}
+              {item.image ? (
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }}
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center">
+                  <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.18em", color: "rgba(23,23,23,0.15)" }}>
+                    {item.category.toUpperCase()}
+                  </span>
+                </div>
+              )}
+
+              {/* Hover overlay */}
               <AnimatePresence>
                 {hovered === idx && (
                   <motion.div
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
-                    className="absolute inset-0 flex flex-col justify-end p-4"
+                    className="absolute inset-0 flex flex-col justify-between p-4"
                     style={{ background: "rgba(23,23,23,0.88)" }}
                   >
-                    <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.14em", color: "#C7F36B", marginBottom: "4px" }}>
-                      {item.category.toUpperCase()} · {item.year}
-                    </span>
-                    <h4 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "14px", fontWeight: 800, color: "#fff", marginBottom: "4px" }}>{item.title}</h4>
-                    <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "rgba(255,255,255,0.55)", marginBottom: "4px" }}>{item.obj}</p>
-                    <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "rgba(255,255,255,0.35)" }}>Channel: {item.channel}</span>
+                    <div className="flex items-start justify-between">
+                      <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.14em", color: "#C7F36B" }}>
+                        {item.category.toUpperCase()} · {item.year}
+                      </span>
+                      {item.link && (
+                        <span className="flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold"
+                          style={{ background: "rgba(61,90,254,0.3)", color: "#C7F36B", fontFamily: "'Manrope', sans-serif" }}>
+                          <ExternalLink size={9} /> View
+                        </span>
+                      )}
+                    </div>
+                    <div>
+                      <h4 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "14px", fontWeight: 800, color: "#fff", marginBottom: "4px" }}>{item.title}</h4>
+                      <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "rgba(255,255,255,0.55)", marginBottom: "4px" }}>{item.obj}</p>
+                      <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "rgba(255,255,255,0.35)" }}>Channel: {item.channel}</span>
+                      {item.tags && (
+                        <div className="flex flex-wrap gap-1 mt-2">
+                          {item.tags.slice(0, 3).map((tag) => (
+                            <span key={tag} className="px-1.5 py-0.5 rounded text-[9px]"
+                              style={{ background: "rgba(199,243,107,0.15)", color: "#C7F36B", fontFamily: "'DM Sans', sans-serif" }}>
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                      <div className="mt-3 flex items-center gap-1 text-[11px] font-semibold" style={{ color: "#C7F36B", fontFamily: "'DM Sans', sans-serif" }}>
+                        Click to view full image <ArrowRight size={10} />
+                      </div>
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -1001,6 +1278,11 @@ function Gallery() {
           ))}
         </motion.div>
       </div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightbox && <GalleryLightbox item={lightbox} onClose={() => setLightbox(null)} />}
+      </AnimatePresence>
     </section>
   );
 }
