@@ -268,7 +268,7 @@ Section heading:
  
 Add the following verified metrics:
  
-₹60L
+₹45L
 Annual marketing budget managed
  
 30%

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { X, ArrowRight, ChevronUp, Menu, Mail, ExternalLink, Download } from "lucide-react";
+import { X, ArrowRight, ChevronUp, Menu, Mail, ExternalLink, Download, Users, Lightbulb, Link2, Zap, Blocks, BarChart3 } from "lucide-react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface CaseStudy {
@@ -97,13 +97,13 @@ const caseStudies: CaseStudy[] = [
     categoryTags: ["Budget", "Vendors", "Planning", "Governance"],
     summary: "Managed the operational foundation required to deliver integrated marketing programmes — covering SEO, paid campaigns, events, PR and brand-building activities including vendor evaluation and management.",
     challenge: "Marketing operations often go unnoticed — but without them, campaigns stall, vendors underdeliver and budgets drift. The challenge was building structure without slowing execution.",
-    contributions: ["Annual budget planning (₹60L)", "Vendor identification and evaluation", "Proposal and agency comparison", "Commercial negotiation", "Scope assessment", "Timeline management", "Performance monitoring", "Stakeholder reporting", "Cross-functional coordination"],
-    impact: "Managed ₹60L annual marketing budget while coordinating vendors, timelines and cross-functional teams across all marketing programmes.",
-    metric: "₹60L budget managed",
+    contributions: ["Annual budget planning (₹45L)", "Vendor identification and evaluation", "Proposal and agency comparison", "Commercial negotiation", "Scope assessment", "Timeline management", "Performance monitoring", "Stakeholder reporting", "Cross-functional coordination"],
+    impact: "Managed ₹45L annual marketing budget while coordinating vendors, timelines and cross-functional teams across all marketing programmes.",
+    metric: "₹45L budget managed",
     color: "#3D5AFE",
     textColor: "#fff",
     accentColor: "#C7F36B",
-    tag: "₹60L ANNUAL MARKETING BUDGET",
+    tag: "₹45L ANNUAL MARKETING BUDGET",
   },
   {
     id: 6,
@@ -143,41 +143,46 @@ const galleryItems = [
   {
     category: "Events", title: "BFSI Summit Announcement",
     obj: "Brand visibility at industry summit", channel: "Social Media", year: "2024", color: "#C7B8FF",
+    image: "/images/gallery-summit.jpg",
     tags: ["#ambitsoftware", "#sugarcrm", "#bfsiitsummit2025", "#nexafin", "#cxtransformation", "#agenticai", "#agenticai", "#cxleadership", "#enterpriseai"],
-    link: "https://www.linkedin.com/company/ambit-software/",
+    link: "https://www.linkedin.com/posts/ambitsoftware-sugarcrm-bfsiitsummit2025-share-7355836546022825984-wi5k/?utm_source=share&utm_medium=member_desktop&rcm=ACoAABKX-XoB-M2g9yrKoPG3YabAQB8tAGYhDeI",
   },
   {
     category: "Email", title: "Nurture Email Sequence",
     obj: "Lead nurturing & engagement", channel: "Email", year: "2023", color: "#3D5AFE",
-    image: "/images/nurture-email.jpg",
+    image: "/images/nurture-email-gen.png",
   },
   {
-    category: "Website", title: "Service Page Rewrite",
+    category: "Website", title: "Products & Service Page Rewrite",
     obj: "Organic traffic growth", channel: "Website", year: "2024", color: "#C7F36B",
+    image: "/images/gallery-crm.jpg",
     subtext: "Banking CRM Software | AI-Powered CRM for Banks | nexaFIN",
     link: "https://www.ambitsoftware.com/",
   },
   {
     category: "Content", title: "B2B Case Study Series",
     obj: "Thought leadership & trust-building", channel: "Content", year: "2024", color: "#C7B8FF",
-    link: "https://www.ambitsoftware.com/casestudies/#",
+    image: "/images/gallery-case-studies.jpg",
+    link: "https://www.ambitsoftware.com/casestudies/",
   },
   {
     category: "Campaigns", title: "Product Launch Campaign",
     obj: "Market entry & demand creation", channel: "Integrated", year: "2023", color: "#FF6B5E",
-    image: "/images/project-07.jpg",
+    image: "/images/gallery-outkreate.jpg",
     link: "https://www.ambitsoftware.com/brochure/",
   },
   {
     category: "Events", title: "Webinar Registration Drive",
     obj: "US market lead generation", channel: "Email + Social", year: "2023", color: "#3D5AFE",
+    image: "/images/webinar-reg-gen.png",
     link: "https://www.linkedin.com/posts/outkreate_investordays-investordaypresentations-investorrelations-ac",
   },
   {
     category: "Social Media", title: "Speaker Announcement Post",
     obj: "Event promotion & credibility", channel: "LinkedIn", year: "2024", color: "#C7F36B",
+    image: "/images/gallery-speaker.jpg",
     tags: ["#bfsitechsummit2026", "#ambitsoftware", "#sugarai", "#bfsi", "#agenticai", "#exitobfsisingapore", "#bfsiitsummit2025", "#digitalbanking"],
-    link: "https://www.linkedin.com/company/ambit-software/",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7483813382610149376/",
   },
 ];
 
@@ -210,7 +215,7 @@ const expertiseCards = [
   {
     title: "SEO & Website Growth",
     desc: "Coordinating SEO, content and website improvements to increase visibility and support lead generation.",
-    color: "#171717", textColor: "#C7F36B", span: ""
+    color: "#ffffff", textColor: "#171717", span: ""
   },
   {
     title: "CRM & Marketing Automation",
@@ -621,74 +626,113 @@ function Hero() {
   );
 }
 
+
 // ─── Philosophy ───────────────────────────────────────────────────────────────
 function Philosophy() {
   const steps = [
-    { num: "01", title: "Understand", sub: "Business, audience & opportunity", color: "#3D5AFE", tc: "#fff" },
-    { num: "02", title: "Position", sub: "Create a clear and relevant narrative", color: "#FF6B5E", tc: "#fff" },
-    { num: "03", title: "Activate", sub: "Bring the story to life across channels", color: "#C7F36B", tc: "#171717" },
-    { num: "04", title: "Optimise", sub: "Measure, learn and improve", color: "#C7B8FF", tc: "#171717" },
+    { num: "01", title: "Audience", desc: "Understand the right business, audience & opportunity", color: "#3D5AFE", bg: "rgba(61,90,254,0.08)", icon: <Users size={18} color="#3D5AFE" /> },
+    { num: "02", title: "Message", desc: "Create a clear and relevant narrative", color: "#9c27b0", bg: "rgba(156,39,176,0.08)", icon: <Lightbulb size={18} color="#9c27b0" /> },
+    { num: "03", title: "Alignment", desc: "Connect teams and priorities", color: "#ff9800", bg: "rgba(255,152,0,0.08)", icon: <Link2 size={18} color="#ff9800" /> },
+    { num: "04", title: "Execution", desc: "Bring the story to life across channels", color: "#4caf50", bg: "rgba(76,175,80,0.08)", icon: <Zap size={18} color="#4caf50" /> },
+    { num: "05", title: "Integration", desc: "Create one connected experience", color: "#f44336", bg: "rgba(244,67,54,0.08)", icon: <Blocks size={18} color="#f44336" /> },
+    { num: "06", title: "Optimisation", desc: "Measure, learn and improve", color: "#00bcd4", bg: "rgba(0,188,212,0.08)", icon: <BarChart3 size={18} color="#00bcd4" /> },
   ];
-  const R = 130, cx = 160, cy = 160;
 
   return (
-    <section className="py-24 px-6" style={{ background: "#F7F2E8" }}>
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+    <section id="philosophy" className="py-24 px-6 overflow-hidden" style={{ background: "#FDF8F1" }}>
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+        
+        {/* Left Content */}
+        <div className="lg:w-[45%]">
+          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.22em", color: "#FF6B5E" }}>
               PHILOSOPHY
             </span>
-            <h2 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(28px, 3.5vw, 48px)", fontWeight: 900, lineHeight: 1.1, color: "#171717", margin: "16px 0 20px" }}>
-              My approach to marketing
+            <h2 className="relative inline-block" style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 900, lineHeight: 1.1, color: "#171717", margin: "14px 0 40px" }}>
+              My approach to<br />marketing
+              <svg className="absolute -bottom-5 left-0 w-full max-w-[200px]" viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 15C50 5 150 2 198 12" stroke="#FF6B5E" strokeWidth="3" strokeLinecap="round" />
+              </svg>
             </h2>
-            <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: "17px", fontWeight: 600, lineHeight: 1.65, color: "#171717", maxWidth: "480px", marginBottom: "18px", borderLeft: "3px solid #FF6B5E", paddingLeft: "16px" }}>
-              "Marketing is not one campaign, one channel or one creative. It is the connection between the right message, the right audience and consistent execution."
-            </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", lineHeight: 1.75, color: "rgba(23,23,23,0.6)", maxWidth: "480px" }}>
+            
+            <div className="pl-6 mb-8 border-l-[3px]" style={{ borderColor: "#FF6B5E" }}>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "17px", fontWeight: 500, lineHeight: 1.6, color: "#171717" }}>
+                "Marketing is not one campaign, one channel or one creative. It is the connection between the right message, the right audience and consistent execution."
+              </p>
+            </div>
+            
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", lineHeight: 1.7, color: "rgba(23,23,23,0.7)" }}>
               I approach marketing as an integrated system. A strong idea should flow through the website, campaign, email, event, sales presentation and customer conversation without losing its meaning.
             </p>
           </motion.div>
+        </div>
 
-          {/* Circular framework */}
-          <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            className="flex justify-center">
-            <div className="relative" style={{ width: "320px", height: "320px" }}>
-              <svg className="absolute inset-0 w-full h-full">
-                <circle cx={cx} cy={cy} r={R} fill="none" stroke="rgba(23,23,23,0.08)" strokeWidth="1" strokeDasharray="6 4" />
-                {steps.map((_, i) => {
-                  const a1 = (i * 90 - 45) * Math.PI / 180;
-                  const a2 = ((i + 1) * 90 - 45) * Math.PI / 180;
-                  return (
-                    <path key={i}
-                      d={`M ${cx + 50 * Math.cos(a1)} ${cy + 50 * Math.sin(a1)} L ${cx + 50 * Math.cos(a2)} ${cy + 50 * Math.sin(a2)}`}
-                      stroke="rgba(23,23,23,0.08)" strokeWidth="1" strokeDasharray="3 3" fill="none" />
-                  );
-                })}
-              </svg>
-              {/* Center */}
-              <div className="absolute rounded-full flex flex-col items-center justify-center"
-                style={{ width: "110px", height: "110px", background: "#171717", top: "50%", left: "50%", transform: "translate(-50%,-50%)", zIndex: 2 }}>
-                <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "9px", fontWeight: 700, letterSpacing: "0.12em", color: "rgba(255,255,255,0.4)", marginBottom: "2px" }}>THE</span>
-                <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 800, color: "#fff" }}>MARKETING</span>
-                <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 800, color: "#C7F36B" }}>SYSTEM</span>
+        {/* Right Content - Circular Graphic */}
+        <div className="lg:w-[55%] relative flex justify-center items-center mt-12 lg:mt-0 min-h-[450px]">
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative w-full max-w-[450px] aspect-square flex justify-center items-center">
+            
+            {/* Center Circle */}
+            <div className="absolute z-10 w-44 h-44 rounded-full bg-white flex flex-col justify-center items-center shadow-[0_10px_40px_rgba(0,0,0,0.08)] border-[6px]" style={{ borderColor: "#FDF8F1" }}>
+              <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: "16px", fontWeight: 800, color: "#171717", textAlign: "center", lineHeight: 1.2 }}>
+                Integrated<br/>Marketing
               </div>
-              {/* Step cards */}
-              {steps.map((step, i) => {
-                const angle = (i * 90 - 45) * Math.PI / 180;
-                const x = cx + R * Math.cos(angle);
-                const y = cy + R * Math.sin(angle);
-                return (
-                  <div key={step.num} className="absolute" style={{ left: x, top: y, transform: "translate(-50%,-50%)", zIndex: 3, width: "88px" }}>
-                    <div className="rounded-xl p-2.5 text-center" style={{ background: step.color }}>
-                      <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, color: step.tc, opacity: 0.6 }}>{step.num}</div>
-                      <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: "12px", fontWeight: 800, color: step.tc }}>{step.title}</div>
-                    </div>
-                    <p className="text-center mt-1" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "9px", color: "rgba(23,23,23,0.5)", lineHeight: 1.4 }}>{step.sub}</p>
-                  </div>
-                );
-              })}
+              <div className="relative mt-1" style={{ fontFamily: "'Caveat', cursive, serif", fontSize: "22px", color: "#171717", fontStyle: "italic" }}>
+                in Action
+                <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 100 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 8C30 3 70 3 95 7" stroke="#FF6B5E" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+              </div>
             </div>
+
+            {/* Connecting dashed circle */}
+            <div className="absolute w-[75%] h-[75%] rounded-full border border-dashed border-gray-300"></div>
+
+            {/* Circular Items */}
+            {steps.map((step, i) => {
+              const angle = (i * 60) - 90; // Start at top
+              const radius = 42; // Percentage of container width
+              const x = 50 + radius * Math.cos(angle * Math.PI / 180);
+              const y = 50 + radius * Math.sin(angle * Math.PI / 180);
+              
+              // Small colored arrows on the dashed line
+              const arrowAngle = angle + 30;
+              const arrowX = 50 + 37.5 * Math.cos(arrowAngle * Math.PI / 180);
+              const arrowY = 50 + 37.5 * Math.sin(arrowAngle * Math.PI / 180);
+              
+              return (
+                <div key={i}>
+                  <div className="absolute w-3 h-3 flex items-center justify-center" 
+                       style={{ 
+                         left: `${arrowX}%`, top: `${arrowY}%`, 
+                         transform: `translate(-50%, -50%) rotate(${arrowAngle + 90}deg)`,
+                         color: step.color
+                       }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                  </div>
+                  <div className="absolute flex flex-col items-center justify-center p-3 rounded-[20px] bg-white shadow-lg transition-transform hover:scale-105" 
+                       style={{ 
+                         left: `${x}%`, top: `${y}%`, 
+                         transform: 'translate(-50%, -50%)',
+                         width: '130px',
+                         border: `1px solid ${step.color}30`,
+                         boxShadow: `0 10px 25px -5px ${step.color}15`
+                       }}>
+                    <div className="w-9 h-9 rounded-full flex items-center justify-center mb-1" style={{ background: step.bg }}>
+                      {step.icon}
+                    </div>
+                    <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, color: step.color }}>
+                      {step.num}
+                    </div>
+                    <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: "12px", fontWeight: 800, color: "#171717", marginBottom: "2px", textAlign: "center" }}>
+                      {step.title}
+                    </div>
+                    <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "10px", color: "rgba(23,23,23,0.6)", textAlign: "center", lineHeight: 1.2 }}>
+                      {step.desc}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </motion.div>
         </div>
       </div>
@@ -724,7 +768,7 @@ function Metrics() {
               BUDGET MANAGED
             </div>
             <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 900, fontSize: "clamp(56px, 8vw, 100px)", lineHeight: 1, color: "#171717", marginBottom: "12px" }}>
-              ₹<AnimatedNumber target={60} suffix="L" active={visible} />
+              ₹<AnimatedNumber target={45} suffix="L" active={visible} />
             </div>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "rgba(23,23,23,0.6)" }}>
               Annual marketing budget managed across campaigns, events, SEO, PR and brand
@@ -881,9 +925,11 @@ function CaseStudyModal({ study, onClose }: { study: CaseStudy; onClose: () => v
 // Image map for case studies that have project images
 const studyImages: Record<number, string> = {
   1: "/images/project-01.jpg",
+  2: "/images/project-02.jpg",
   3: "/images/project-03.jpg",
   4: "/images/project-04.jpg",
   5: "/images/project-05.jpg",
+  6: "/images/project-06.jpg",
   7: "/images/project-07.jpg",
 };
 
