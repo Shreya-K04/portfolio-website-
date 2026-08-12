@@ -414,7 +414,7 @@ function Nav() {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <a href="https://linkedin.com/in/shreya-kavthale" target="_blank" rel="noopener noreferrer"
+          <a href="https://www.linkedin.com/in/shreya-k-/" target="_blank" rel="noopener noreferrer"
             className="text-sm font-medium px-4 py-2 rounded-full border transition-opacity hover:opacity-60"
             style={{ fontFamily: "'DM Sans', sans-serif", color: "#171717", borderColor: "rgba(23,23,23,0.22)" }}>
             LinkedIn
@@ -448,7 +448,7 @@ function Nav() {
               </button>
             ))}
             <div className="flex gap-3 pt-2">
-              <a href="https://linkedin.com/in/shreya-kavthale" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/in/shreya-k-/" target="_blank" rel="noopener noreferrer"
                 className="px-4 py-2 rounded-full text-sm border"
                 style={{ fontFamily: "'DM Sans', sans-serif", borderColor: "rgba(23,23,23,0.2)", color: "#171717" }}>
                 LinkedIn
@@ -535,8 +535,10 @@ function Hero() {
   return (
     <section id="hero" className="min-h-screen pt-28 pb-16 px-6 relative overflow-hidden" style={{ background: "#F7F2E8" }}>
       {/* Dot texture */}
-      <div className="absolute inset-0 pointer-events-none" style={{ opacity: 0.03,
-        backgroundImage: "radial-gradient(#171717 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
+      <div className="absolute inset-0 pointer-events-none" style={{
+        opacity: 0.03,
+        backgroundImage: "radial-gradient(#171717 1px, transparent 1px)", backgroundSize: "28px 28px"
+      }} />
 
       <div className="max-w-7xl mx-auto">
         {/* Eyebrow — updated */}
@@ -641,7 +643,7 @@ function Philosophy() {
   return (
     <section id="philosophy" className="py-24 px-6 overflow-hidden" style={{ background: "#FDF8F1" }}>
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
-        
+
         {/* Left Content */}
         <div className="lg:w-[45%]">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
@@ -654,13 +656,13 @@ function Philosophy() {
                 <path d="M2 15C50 5 150 2 198 12" stroke="#FF6B5E" strokeWidth="3" strokeLinecap="round" />
               </svg>
             </h2>
-            
+
             <div className="pl-6 mb-8 border-l-[3px]" style={{ borderColor: "#FF6B5E" }}>
               <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "17px", fontWeight: 500, lineHeight: 1.6, color: "#171717" }}>
                 "Marketing is not one campaign, one channel or one creative. It is the connection between the right message, the right audience and consistent execution."
               </p>
             </div>
-            
+
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", lineHeight: 1.7, color: "rgba(23,23,23,0.7)" }}>
               I approach marketing as an integrated system. A strong idea should flow through the website, campaign, email, event, sales presentation and customer conversation without losing its meaning.
             </p>
@@ -670,11 +672,11 @@ function Philosophy() {
         {/* Right Content - Circular Graphic */}
         <div className="lg:w-[55%] relative flex justify-center items-center mt-12 lg:mt-0 min-h-[450px]">
           <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative w-full max-w-[450px] aspect-square flex justify-center items-center">
-            
+
             {/* Center Circle */}
             <div className="absolute z-10 w-44 h-44 rounded-full bg-white flex flex-col justify-center items-center shadow-[0_10px_40px_rgba(0,0,0,0.08)] border-[6px]" style={{ borderColor: "#FDF8F1" }}>
               <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: "16px", fontWeight: 800, color: "#171717", textAlign: "center", lineHeight: 1.2 }}>
-                Integrated<br/>Marketing
+                Integrated<br />Marketing
               </div>
               <div className="relative mt-1" style={{ fontFamily: "'Caveat', cursive, serif", fontSize: "22px", color: "#171717", fontStyle: "italic" }}>
                 in Action
@@ -693,30 +695,30 @@ function Philosophy() {
               const radius = 42; // Percentage of container width
               const x = 50 + radius * Math.cos(angle * Math.PI / 180);
               const y = 50 + radius * Math.sin(angle * Math.PI / 180);
-              
+
               // Small colored arrows on the dashed line
               const arrowAngle = angle + 30;
               const arrowX = 50 + 37.5 * Math.cos(arrowAngle * Math.PI / 180);
               const arrowY = 50 + 37.5 * Math.sin(arrowAngle * Math.PI / 180);
-              
+
               return (
                 <div key={i}>
-                  <div className="absolute w-3 h-3 flex items-center justify-center" 
-                       style={{ 
-                         left: `${arrowX}%`, top: `${arrowY}%`, 
-                         transform: `translate(-50%, -50%) rotate(${arrowAngle + 90}deg)`,
-                         color: step.color
-                       }}>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                  <div className="absolute w-3 h-3 flex items-center justify-center"
+                    style={{
+                      left: `${arrowX}%`, top: `${arrowY}%`,
+                      transform: `translate(-50%, -50%) rotate(${arrowAngle + 90}deg)`,
+                      color: step.color
+                    }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
                   </div>
-                  <div className="absolute flex flex-col items-center justify-center p-3 rounded-[20px] bg-white shadow-lg transition-transform hover:scale-105" 
-                       style={{ 
-                         left: `${x}%`, top: `${y}%`, 
-                         transform: 'translate(-50%, -50%)',
-                         width: '130px',
-                         border: `1px solid ${step.color}30`,
-                         boxShadow: `0 10px 25px -5px ${step.color}15`
-                       }}>
+                  <div className="absolute flex flex-col items-center justify-center p-3 rounded-[20px] bg-white shadow-lg transition-transform hover:scale-105"
+                    style={{
+                      left: `${x}%`, top: `${y}%`,
+                      transform: 'translate(-50%, -50%)',
+                      width: '130px',
+                      border: `1px solid ${step.color}30`,
+                      boxShadow: `0 10px 25px -5px ${step.color}15`
+                    }}>
                     <div className="w-9 h-9 rounded-full flex items-center justify-center mb-1" style={{ background: step.bg }}>
                       {step.icon}
                     </div>
@@ -1491,17 +1493,17 @@ function About() {
           <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.22em", color: "rgba(23,23,23,0.45)" }}>ABOUT</span>
           {/* Updated heading */}
           <h2 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(26px, 4vw, 48px)", fontWeight: 900, lineHeight: 1.1, color: "#171717", margin: "14px 0 32px" }}>
-            I work where marketing ideas<br />meet operational execution.
+            From customer conversations to integrated <br />marketing leadership.
           </h2>
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Updated copy */}
             <div className="space-y-4">
               {[
-                "I began my career through customer engagement, pre-sales support and consultative communication before moving deeper into digital and integrated marketing.",
-                "Over the last six years, I have worked across content, email marketing, social media, webinars, client coordination, corporate communications, events, websites, SEO, CRM and marketing operations.",
-                "At Outkreate, I managed US-focused campaigns and client projects, acting as the link between client requirements and internal creative teams. This strengthened my ability to translate business expectations into clear briefs, manage revisions and follow projects through to delivery.",
-                "At Ambit Software, my scope expanded across integrated marketing, corporate communications, BFSI events, digital campaigns, website growth, CRM, vendors and stakeholder engagement. I now manage the operational coordination behind multiple marketing workstreams while supporting brand visibility, lead generation and sales-pipeline growth.",
-                "My experience across B2B technology, BFSI, education and IT services has helped me understand different audiences, business models and customer journeys. It allows me to adapt the communication and execution approach while keeping the objective clear.",
+                "My career has evolved across different sides of the business — from pre-sales and customer engagement to account coordination, digital marketing, and now integrated marketing operations. This journey has given me a practical understanding of how customers think, how sales teams operate, how creative and digital teams deliver, and how marketing needs to connect all of these moving parts.",
+                "I started in pre-sales, working closely with customers, sales and technical teams on lead qualification, requirements, proposals and follow-ups. At MIT-SDE, I moved into a consultative role where I managed high volumes of prospective customers, supported them through their decision-making journey and worked across CRM communication, webinars, conversions and post-sales engagement. These early roles built my foundation in communication, relationship management and understanding customer needs.",
+                "At Outkreate, my career moved deeper into marketing. I managed US-focused client accounts while working across content, email campaigns, webinars and digital initiatives. Acting as the bridge between clients and internal creative teams taught me how to translate business requirements into clear briefs, guide execution, manage feedback and approvals, and take ownership of projects from requirement to final delivery.",
+                "Today, at Ambit Software, my role spans integrated marketing, corporate communications and marketing operations across B2B technology and BFSI. I manage multiple marketing workstreams covering corporate events, digital campaigns, website and SEO initiatives, CRM and email marketing, content, vendors, budgets and stakeholder communication. A major part of my role is bringing people and processes together — working across leadership, sales, creative, development teams, partners and vendors to keep marketing initiatives aligned and moving towards execution.",
+                "Working across IT services, BFSI, EdTech and service-led businesses has also shaped the way I approach marketing. Different industries have taught me to adapt quickly, understand unfamiliar products and audiences, and communicate value in ways that are relevant to the business.",
               ].map((para, i) => (
                 <p key={i} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", lineHeight: 1.8, color: "rgba(23,23,23,0.72)" }}>{para}</p>
               ))}
@@ -1530,7 +1532,7 @@ function About() {
 function SWOT() {
   const quadrants = [
     {
-      label: "STRENGTHS",
+      label: "Strengths",
       color: "#3D5AFE",
       textColor: "#fff",
       accentColor: "rgba(255,255,255,0.15)",
@@ -1538,7 +1540,7 @@ function SWOT() {
       copy: "My strongest capabilities lie in implementation, marketing operations and execution. I am skilled at coordinating people, processes, campaigns and events while ensuring that requirements move towards timely delivery. I am also a quick learner who can understand new industries, technologies and business concepts and translate them into effective content, website updates and creative direction.",
     },
     {
-      label: "DEVELOPMENT AREAS",
+      label: "Development Areas",
       color: "#FF6B5E",
       textColor: "#fff",
       accentColor: "rgba(255,255,255,0.15)",
@@ -1546,7 +1548,7 @@ function SWOT() {
       copy: "I am continuously working on strengthening my professional vocabulary and communicating complex ideas more precisely. At times, I may need additional time to understand unfamiliar requirements, become impatient when progress is delayed or feel nervous when an issue does not have an immediate solution.",
     },
     {
-      label: "OPPORTUNITIES",
+      label: "Opportunities",
       color: "#C7F36B",
       textColor: "#171717",
       accentColor: "rgba(23,23,23,0.08)",
@@ -1554,7 +1556,7 @@ function SWOT() {
       copy: "I see strong opportunities in learning emerging marketing tools, AI platforms, automation techniques and analytics capabilities. Strengthening my strategic planning, data interpretation and leadership communication will help me complement my execution expertise and progress into broader marketing roles.",
     },
     {
-      label: "THREATS",
+      label: "Threats",
       color: "#171717",
       textColor: "#F7F2E8",
       accentColor: "rgba(247,242,232,0.07)",
@@ -1592,9 +1594,9 @@ function SWOT() {
                   style={{ background: q.accentColor, color: q.textColor, fontFamily: "'Manrope', sans-serif" }}>
                   {q.icon}
                 </span>
-                <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.2em", color: q.textColor === "#fff" ? "rgba(255,255,255,0.6)" : "rgba(23,23,23,0.45)" }}>
+                <h3 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "20px", fontWeight: 800, color: q.textColor, margin: 0 }}>
                   {q.label}
-                </span>
+                </h3>
               </div>
               <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", lineHeight: 1.75, color: q.textColor === "#fff" ? "rgba(255,255,255,0.8)" : q.textColor === "#F7F2E8" ? "rgba(247,242,232,0.75)" : "rgba(23,23,23,0.72)" }}>
                 {q.copy}
@@ -1631,20 +1633,20 @@ function Education() {
           {[
             { degree: "MBA IN MARKETING", school: "MIT World Peace University", year: "2017–2019" },
             { degree: "BBA IN MARKETING", school: "DCCL, Latur", year: "2014–2017" },
-          ].map((ed) => (
-            <div key={ed.degree} className="rounded-2xl p-6" style={{ background: "#171717" }}>
-              <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.16em", color: "rgba(247,242,232,0.3)", marginBottom: "10px" }}>{ed.degree}</div>
-              <h4 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "15px", fontWeight: 800, color: "#F7F2E8", marginBottom: "6px" }}>{ed.school}</h4>
-              <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "rgba(247,242,232,0.4)" }}>{ed.year}</span>
+          ].map((ed, index) => (
+            <div key={ed.degree} className="rounded-2xl p-6" style={{ background: index === 0 ? "#C7F36B" : "#C7B8FF" }}>
+              <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.16em", color: "rgba(23,23,23,0.5)", marginBottom: "10px" }}>{ed.degree}</div>
+              <h4 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "15px", fontWeight: 800, color: "#171717", marginBottom: "6px" }}>{ed.school}</h4>
+              <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "rgba(23,23,23,0.6)" }}>{ed.year}</span>
             </div>
           ))}
-          <div className="rounded-2xl p-6" style={{ background: "#3D5AFE" }}>
-            <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.16em", color: "rgba(255,255,255,0.45)", marginBottom: "10px" }}>CERTIFICATIONS</div>
+          <div className="rounded-2xl p-6" style={{ background: "#FF6B5E" }}>
+            <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.16em", color: "rgba(255,255,255,0.6)", marginBottom: "10px" }}>CERTIFICATIONS</div>
             <div className="space-y-2.5">
               {certs.map((c) => (
                 <div key={c} className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[6px]" style={{ background: "#C7F36B" }} />
-                  <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "rgba(255,255,255,0.85)", lineHeight: 1.5 }}>{c}</span>
+                  <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[6px]" style={{ background: "#F7F2E8" }} />
+                  <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "rgba(255,255,255,0.9)", lineHeight: 1.5 }}>{c}</span>
                 </div>
               ))}
             </div>
@@ -1676,7 +1678,7 @@ function Contact() {
               style={{ background: "#3D5AFE", color: "#fff", fontFamily: "'DM Sans', sans-serif" }}>
               <Mail size={17} /> Email Me
             </a>
-            <a href="https://linkedin.com/in/shreya-kavthale" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.linkedin.com/in/shreya-k-/" target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-2 px-7 py-4 rounded-full font-semibold transition-opacity hover:opacity-70 border"
               style={{ borderColor: "rgba(247,242,232,0.18)", color: "#F7F2E8", fontFamily: "'DM Sans', sans-serif" }}>
               <ExternalLink size={17} /> Connect on LinkedIn
