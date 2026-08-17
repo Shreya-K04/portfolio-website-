@@ -143,7 +143,7 @@ const galleryItems = [
   {
     category: "Events", title: "BFSI Summit Announcement",
     obj: "Brand visibility at industry summit", channel: "Social Media", year: "2024", color: "#C7B8FF",
-    image: "/images/gallery-summit.jpg",
+    image: "/images/gallery-summit.jpeg",
     tags: ["#ambitsoftware", "#sugarcrm", "#bfsiitsummit2025", "#nexafin", "#cxtransformation", "#agenticai", "#agenticai", "#cxleadership", "#enterpriseai"],
     link: "https://www.linkedin.com/posts/ambitsoftware-sugarcrm-bfsiitsummit2025-share-7355836546022825984-wi5k/?utm_source=share&utm_medium=member_desktop&rcm=ACoAABKX-XoB-M2g9yrKoPG3YabAQB8tAGYhDeI",
   },
@@ -155,14 +155,14 @@ const galleryItems = [
   {
     category: "Website", title: "Products & Service Page Rewrite",
     obj: "Organic traffic growth", channel: "Website", year: "2024", color: "#C7F36B",
-    image: "/images/gallery-crm.jpg",
+    image: "/images/gallery-crm.jpeg",
     subtext: "Banking CRM Software | AI-Powered CRM for Banks | nexaFIN",
     link: "https://www.ambitsoftware.com/",
   },
   {
     category: "Content", title: "B2B Case Study Series",
     obj: "Thought leadership & trust-building", channel: "Content", year: "2024", color: "#C7B8FF",
-    image: "/images/gallery-case-studies.jpg",
+    image: "/images/gallery-case-studies.jpeg",
     link: "https://www.ambitsoftware.com/casestudies/",
   },
   {
@@ -180,7 +180,7 @@ const galleryItems = [
   {
     category: "Social Media", title: "Speaker Announcement Post",
     obj: "Event promotion & credibility", channel: "LinkedIn", year: "2024", color: "#C7F36B",
-    image: "/images/gallery-speaker.jpg",
+    image: "/images/gallery-speaker.jpeg",
     tags: ["#bfsitechsummit2026", "#ambitsoftware", "#sugarai", "#bfsi", "#agenticai", "#exitobfsisingapore", "#bfsiitsummit2025", "#digitalbanking"],
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7483813382610149376/",
   },
@@ -190,7 +190,7 @@ const expertiseCards = [
   {
     title: "Integrated Marketing",
     desc: "Connecting digital campaigns, content, email, events, websites and sales priorities through coordinated marketing planning.",
-    color: "#3D5AFE", textColor: "#fff", span: "col-span-2"
+    color: "#3D5AFE", textColor: "#fff", span: "sm:col-span-2"
   },
   {
     title: "Marketing Operations",
@@ -230,7 +230,7 @@ const expertiseCards = [
   {
     title: "Account Management & Client Success",
     desc: "Managing client requirements, coordinating internal teams and maintaining clear communication throughout project delivery. Supporting client satisfaction, long-term relationships and account growth.",
-    color: "#C7B8FF", textColor: "#171717", span: "col-span-2"
+    color: "#C7B8FF", textColor: "#171717", span: "sm:col-span-2"
   },
 ];
 
@@ -271,8 +271,8 @@ const journeyData = [
 
 const toolGroups = [
   { label: "CRM & Campaigns", tools: ["HubSpot", "Sugar Market", "SugarCRM", "Apollo", "Brevo"], color: "#3D5AFE" },
-  { label: "SEO & Analytics", tools: ["SEMrush", "Google Analytics", "Google Search Console"], color: "#C7F36B" },
-  { label: "Content & Creative", tools: ["Canva"], color: "#FF6B5E" },
+  { label: "SEO & Analytics", tools: ["SEMrush", "Google Analytics", "Google Search Console", "Microsoft Clarity"], color: "#C7F36B" },
+  { label: "Content & Creative", tools: ["Canva", "Figma", "ChatGPT", "Adobe Express", "Grammarly", "Loom"], color: "#FF6B5E" },
 ];
 
 const galleryCategories = ["All", "Social Media", "Events", "Email", "Website", "Content", "Campaigns"];
@@ -322,7 +322,7 @@ function scrollTo(id: string) {
 function Tag({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
   return (
     <span
-      className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold tracking-[0.1em] whitespace-nowrap"
+      className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold tracking-[0.1em] max-w-full text-ellipsis overflow-hidden"
       style={{ fontFamily: "'Manrope', sans-serif", ...style }}
     >
       {children}
@@ -437,24 +437,24 @@ function Nav() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            className="md:hidden absolute top-full left-0 right-0 px-6 py-6 flex flex-col gap-4"
+            className="md:hidden absolute top-full left-0 right-0 px-6 py-6 flex flex-col gap-4 max-h-[80vh] overflow-y-auto shadow-xl"
             style={{ background: "#F7F2E8", borderBottom: "1px solid rgba(23,23,23,0.08)" }}
           >
             {links.map((l) => (
               <button key={l.id} onClick={() => { scrollTo(l.id); setOpen(false); }}
-                className="text-left text-base font-medium"
+                className="text-left text-base font-medium py-1"
                 style={{ fontFamily: "'DM Sans', sans-serif", color: "#171717" }}>
                 {l.label}
               </button>
             ))}
-            <div className="flex gap-3 pt-2">
+            <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <a href="https://www.linkedin.com/in/shreya-k-/" target="_blank" rel="noopener noreferrer"
-                className="px-4 py-2 rounded-full text-sm border"
+                className="px-4 py-2.5 rounded-full text-sm border text-center"
                 style={{ fontFamily: "'DM Sans', sans-serif", borderColor: "rgba(23,23,23,0.2)", color: "#171717" }}>
                 LinkedIn
               </a>
               <button onClick={() => { scrollTo("contact"); setOpen(false); }}
-                className="px-4 py-2 rounded-full text-sm"
+                className="px-4 py-2.5 rounded-full text-sm text-center"
                 style={{ background: "#3D5AFE", color: "#fff", fontFamily: "'DM Sans', sans-serif" }}>
                 {"Let's Connect"}
               </button>
@@ -483,17 +483,17 @@ function FloatingLabel({ text, style, delay }: { text: string; style: React.CSSP
 
 function Portrait() {
   return (
-    <div className="relative flex items-center justify-center" style={{ minHeight: "440px" }}>
+    <div className="relative flex items-center justify-center py-6 sm:py-0 overflow-hidden sm:overflow-visible" style={{ minHeight: "440px" }}>
       {/* Decorative blobs */}
-      <div className="absolute rounded-[60px]"
-        style={{ width: "340px", height: "430px", background: "#C7B8FF", top: "30px", left: "calc(50% - 190px)", transform: "rotate(-4deg)", zIndex: 0 }} />
-      <div className="absolute rounded-full"
+      <div className="absolute rounded-[60px] max-w-[85vw]"
+        style={{ width: "340px", height: "430px", background: "#C7B8FF", top: "30px", left: "calc(50% - 170px)", transform: "rotate(-4deg)", zIndex: 0 }} />
+      <div className="absolute rounded-full hidden sm:block"
         style={{ width: "60px", height: "60px", background: "#C7F36B", top: "0px", left: "calc(50% + 80px)", zIndex: 0, opacity: 0.9 }} />
-      <div className="absolute rounded-full border-2 border-dashed"
+      <div className="absolute rounded-full border-2 border-dashed hidden sm:block"
         style={{ width: "90px", height: "90px", borderColor: "#3D5AFE", bottom: "0px", right: "calc(50% - 190px)", zIndex: 0, opacity: 0.5 }} />
 
       {/* Portrait frame */}
-      <div className="relative overflow-hidden"
+      <div className="relative overflow-hidden max-w-[85vw]"
         style={{ width: "320px", height: "420px", borderRadius: "160px 160px 100px 100px", border: "3px solid #171717", zIndex: 2 }}>
         <img
           src="https://plain-apac-prod-public.komododecks.com/202607/24/WAbnAYViCgEryvxkcV5D/image.jpg"
@@ -507,23 +507,25 @@ function Portrait() {
         </div>
       </div>
 
-      {/* Floating labels — updated per brief */}
-      <FloatingLabel text="Marketing Operations" style={{ top: "20px", right: "0px", background: "#3D5AFE", color: "#fff" }} delay={0.8} />
-      <FloatingLabel text="Integrated Marketing" style={{ top: "100px", right: "-20px", background: "#FF6B5E", color: "#fff" }} delay={1.0} />
-      <FloatingLabel text="Corporate Communications" style={{ bottom: "110px", right: "-10px", background: "#171717", color: "#C7F36B" }} delay={1.2} />
-      <FloatingLabel text="SEO & Digital Growth" style={{ bottom: "50px", left: "0px", background: "#C7F36B", color: "#171717" }} delay={1.1} />
-      <FloatingLabel text="CRM & Campaigns" style={{ top: "170px", left: "-20px", background: "#C7B8FF", color: "#171717" }} delay={0.9} />
-      <FloatingLabel text="Corporate Events" style={{ top: "60px", left: "10px", background: "#fff", color: "#3D5AFE" }} delay={1.3} />
+      {/* Floating labels — hidden on small mobile to avoid layout clipping */}
+      <div className="hidden sm:block">
+        <FloatingLabel text="Marketing Operations" style={{ top: "20px", right: "-10px", background: "#3D5AFE", color: "#fff" }} delay={0.8} />
+        <FloatingLabel text="Integrated Marketing" style={{ top: "100px", right: "-25px", background: "#FF6B5E", color: "#fff" }} delay={1.0} />
+        <FloatingLabel text="Corporate Communications" style={{ bottom: "110px", right: "-15px", background: "#171717", color: "#C7F36B" }} delay={1.2} />
+        <FloatingLabel text="SEO & Digital Growth" style={{ bottom: "50px", left: "-10px", background: "#C7F36B", color: "#171717" }} delay={1.1} />
+        <FloatingLabel text="CRM & Campaigns" style={{ top: "170px", left: "-25px", background: "#C7B8FF", color: "#171717" }} delay={0.9} />
+        <FloatingLabel text="Corporate Events" style={{ top: "60px", left: "0px", background: "#fff", color: "#3D5AFE" }} delay={1.3} />
+      </div>
 
-      {/* Handwritten annotation — updated quote */}
-      <div className="absolute" style={{ top: "-10px", left: "50%", transform: "translateX(-90%) rotate(-5deg)", zIndex: 11, whiteSpace: "nowrap" }}>
+      {/* Handwritten annotation */}
+      <div className="absolute hidden sm:block" style={{ top: "-10px", left: "50%", transform: "translateX(-90%) rotate(-5deg)", zIndex: 11, whiteSpace: "nowrap" }}>
         <span style={{ fontFamily: "Georgia, serif", fontStyle: "italic", fontSize: "12px", color: "#FF6B5E" }}>
           {'"Strong marketing connects the message, the people and the execution."'}
         </span>
       </div>
 
       {/* Arrow doodle */}
-      <svg className="absolute" style={{ top: "12px", left: "calc(50% - 80px)", width: "40px", height: "28px", zIndex: 11 }}>
+      <svg className="absolute hidden sm:block" style={{ top: "12px", left: "calc(50% - 80px)", width: "40px", height: "28px", zIndex: 11 }}>
         <path d="M2,24 Q20,2 38,10" stroke="#FF6B5E" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeDasharray="3 2" />
         <path d="M34,6 L38,10 L32,12" stroke="#FF6B5E" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
@@ -533,7 +535,7 @@ function Portrait() {
 
 function Hero() {
   return (
-    <section id="hero" className="min-h-screen pt-28 pb-16 px-6 relative overflow-hidden" style={{ background: "#F7F2E8" }}>
+    <section id="hero" className="min-h-screen pt-24 sm:pt-28 pb-12 sm:pb-16 px-4 sm:px-6 relative overflow-hidden" style={{ background: "#F7F2E8" }}>
       {/* Dot texture */}
       <div className="absolute inset-0 pointer-events-none" style={{
         opacity: 0.03,
@@ -541,27 +543,25 @@ function Hero() {
       }} />
 
       <div className="max-w-7xl mx-auto">
-        {/* Eyebrow — updated */}
+        {/* Eyebrow */}
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}
-          className="inline-flex items-center gap-2 mb-8">
+          className="inline-flex items-center gap-2 mb-6 sm:mb-8 flex-wrap">
           <span className="w-7 h-[1.5px]" style={{ background: "#FF6B5E" }} />
-          <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.22em", color: "#FF6B5E" }}>
+          <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.18em", color: "#FF6B5E" }}>
             MARKETING OPERATIONS · CORPORATE COMMUNICATIONS · INTEGRATED MARKETING
           </span>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
           {/* Left */}
           <div>
-            {/* Headline — updated with styled segments */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.25, duration: 0.7 }}
-              style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(34px, 4.5vw, 60px)", fontWeight: 900, lineHeight: 1.2, color: "#171717", marginBottom: "24px" }}
+              style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(28px, 5vw, 60px)", fontWeight: 900, lineHeight: 1.2, color: "#171717", marginBottom: "20px" }}
             >
               {"I bring "}
-              {/* "structure to marketing" — cobalt, CSS underline (no SVG width bug) */}
               <span style={{
                 color: "#3D5AFE",
                 textDecoration: "underline",
@@ -570,7 +570,6 @@ function Hero() {
                 textUnderlineOffset: "6px",
               }}>{"structure to marketing"}</span>
               {", "}
-              {/* "clarity to communication" — lime pill highlight */}
               <span style={{
                 background: "#C7F36B",
                 color: "#171717",
@@ -579,31 +578,29 @@ function Hero() {
                 display: "inline",
               }}>{"clarity to communication"}</span>
               {" and "}
-              {/* "consistency to execution" — coral */}
               <span style={{ color: "#FF6B5E" }}>{"consistency to execution."}</span>
             </motion.h1>
 
-            {/* Intro — updated */}
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.38 }}
-              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", lineHeight: 1.75, color: "rgba(23,23,23,0.65)", maxWidth: "530px", marginBottom: "14px" }}>
+              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", lineHeight: 1.75, color: "rgba(23,23,23,0.65)", maxWidth: "530px", marginBottom: "14px" }}>
               Hi, {"I'm"} Shreya — a Marketing Manager with 6+ years of experience leading integrated marketing and corporate communications across B2B technology, BFSI, education and IT services.
             </motion.p>
 
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.46 }}
-              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", lineHeight: 1.75, color: "rgba(23,23,23,0.65)", maxWidth: "530px", marginBottom: "32px" }}>
+              style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", lineHeight: 1.75, color: "rgba(23,23,23,0.65)", maxWidth: "530px", marginBottom: "28px" }}>
               My work spans campaigns, corporate events, SEO, websites, CRM, content, vendor management and stakeholder engagement. I connect internal teams, external partners and marketing channels to ensure that ideas move from requirement to effective execution.
             </motion.p>
 
-            {/* CTAs — updated */}
+            {/* CTAs */}
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55 }}
-              className="flex flex-wrap gap-3 mb-8">
+              className="flex flex-col sm:flex-row flex-wrap gap-3 mb-8">
               <button onClick={() => scrollTo("work")}
-                className="flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm transition-all hover:gap-4"
+                className="flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm transition-all hover:gap-4 w-full sm:w-auto"
                 style={{ background: "#171717", color: "#F7F2E8", fontFamily: "'DM Sans', sans-serif" }}>
                 Explore My Work <ArrowRight size={15} />
               </button>
               <button onClick={() => scrollTo("journey")}
-                className="flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border transition-opacity hover:opacity-70"
+                className="flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm border transition-opacity hover:opacity-70 w-full sm:w-auto"
                 style={{ borderColor: "#3D5AFE", color: "#3D5AFE", fontFamily: "'DM Sans', sans-serif" }}>
                 View My Journey
               </button>
@@ -611,7 +608,7 @@ function Hero() {
 
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.65 }}
               className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full" style={{ background: "#C7F36B" }} />
+              <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: "#C7F36B" }} />
               <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "rgba(23,23,23,0.45)" }}>
                 Pune, India · Working across national and international markets
               </span>
@@ -641,36 +638,54 @@ function Philosophy() {
   ];
 
   return (
-    <section id="philosophy" className="py-24 px-6 overflow-hidden" style={{ background: "#FDF8F1" }}>
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+    <section id="philosophy" className="py-16 sm:py-24 px-4 sm:px-6 overflow-hidden" style={{ background: "#FDF8F1" }}>
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
         {/* Left Content */}
-        <div className="lg:w-[45%]">
+        <div className="lg:w-[45%] w-full">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.22em", color: "#FF6B5E" }}>
               PHILOSOPHY
             </span>
-            <h2 className="relative inline-block" style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 900, lineHeight: 1.1, color: "#171717", margin: "14px 0 40px" }}>
+            <h2 className="relative inline-block" style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(30px, 4.5vw, 64px)", fontWeight: 900, lineHeight: 1.1, color: "#171717", margin: "14px 0 28px" }}>
               My approach to<br />marketing
-              <svg className="absolute -bottom-5 left-0 w-full max-w-[200px]" viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className="absolute -bottom-4 left-0 w-full max-w-[180px] sm:max-w-[200px]" viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2 15C50 5 150 2 198 12" stroke="#FF6B5E" strokeWidth="3" strokeLinecap="round" />
               </svg>
             </h2>
 
-            <div className="pl-6 mb-8 border-l-[3px]" style={{ borderColor: "#FF6B5E" }}>
-              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "17px", fontWeight: 500, lineHeight: 1.6, color: "#171717" }}>
+            <div className="pl-4 sm:pl-6 mb-6 sm:mb-8 border-l-[3px]" style={{ borderColor: "#FF6B5E" }}>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", fontWeight: 500, lineHeight: 1.6, color: "#171717" }}>
                 "Marketing is not one campaign, one channel or one creative. It is the connection between the right message, the right audience and consistent execution."
               </p>
             </div>
 
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", lineHeight: 1.7, color: "rgba(23,23,23,0.7)" }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", lineHeight: 1.7, color: "rgba(23,23,23,0.7)" }}>
               I approach marketing as an integrated system. A strong idea should flow through the website, campaign, email, event, sales presentation and customer conversation without losing its meaning.
             </p>
           </motion.div>
         </div>
 
-        {/* Right Content - Circular Graphic */}
-        <div className="lg:w-[55%] relative flex justify-center items-center mt-12 lg:mt-0 min-h-[450px]">
+        {/* Mobile / Tablet Step Grid (< lg) */}
+        <div className="lg:hidden w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+          {steps.map((step) => (
+            <div key={step.num} className="p-5 rounded-2xl bg-white border border-black/5 shadow-sm flex flex-col items-start">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: step.bg }}>
+                  {step.icon}
+                </div>
+                <div>
+                  <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, color: step.color }}>{step.num}</span>
+                  <h4 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "14px", fontWeight: 800, color: "#171717" }}>{step.title}</h4>
+                </div>
+              </div>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "rgba(23,23,23,0.65)", lineHeight: 1.4 }}>{step.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop Circular Graphic (>= lg) */}
+        <div className="hidden lg:flex lg:w-[55%] relative justify-center items-center mt-12 lg:mt-0 min-h-[450px]">
           <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative w-full max-w-[450px] aspect-square flex justify-center items-center">
 
             {/* Center Circle */}
@@ -691,12 +706,11 @@ function Philosophy() {
 
             {/* Circular Items */}
             {steps.map((step, i) => {
-              const angle = (i * 60) - 90; // Start at top
-              const radius = 42; // Percentage of container width
+              const angle = (i * 60) - 90;
+              const radius = 42;
               const x = 50 + radius * Math.cos(angle * Math.PI / 180);
               const y = 50 + radius * Math.sin(angle * Math.PI / 180);
 
-              // Small colored arrows on the dashed line
               const arrowAngle = angle + 30;
               const arrowX = 50 + 37.5 * Math.cos(arrowAngle * Math.PI / 180);
               const arrowY = 50 + 37.5 * Math.sin(arrowAngle * Math.PI / 180);
@@ -752,24 +766,24 @@ function Metrics() {
   const ref = useRef<HTMLDivElement>(null);
   const visible = useVisible(ref as React.RefObject<HTMLElement>);
   return (
-    <section id="metrics" className="py-24 px-6" style={{ background: "#171717" }}>
+    <section id="metrics" className="py-16 sm:py-24 px-4 sm:px-6" style={{ background: "#171717" }}>
       <div className="max-w-7xl mx-auto" ref={ref}>
-        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14">
+        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10 sm:mb-14">
           <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.22em", color: "rgba(247,242,232,0.35)" }}>
             IMPACT
           </span>
-          <h2 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(32px, 4.5vw, 60px)", fontWeight: 900, lineHeight: 1.1, color: "#F7F2E8", marginTop: "14px" }}>
+          <h2 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(28px, 4.5vw, 60px)", fontWeight: 900, lineHeight: 1.1, color: "#F7F2E8", marginTop: "14px" }}>
             Impact, not<br />just activity.
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Large */}
-          <div className="col-span-2 rounded-3xl p-8" style={{ background: "#C7F36B", minHeight: "240px" }}>
+          <div className="col-span-1 sm:col-span-2 rounded-3xl p-6 sm:p-8" style={{ background: "#C7F36B", minHeight: "220px" }}>
             <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.18em", color: "rgba(23,23,23,0.45)", marginBottom: "16px" }}>
               BUDGET MANAGED
             </div>
-            <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 900, fontSize: "clamp(56px, 8vw, 100px)", lineHeight: 1, color: "#171717", marginBottom: "12px" }}>
+            <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 900, fontSize: "clamp(48px, 8vw, 100px)", lineHeight: 1, color: "#171717", marginBottom: "12px" }}>
               ₹<AnimatedNumber target={45} suffix="L" active={visible} />
             </div>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "rgba(23,23,23,0.6)" }}>
@@ -778,11 +792,11 @@ function Metrics() {
           </div>
 
           {/* Med 1 */}
-          <div className="rounded-3xl p-7" style={{ background: "#3D5AFE" }}>
+          <div className="rounded-3xl p-6 sm:p-7" style={{ background: "#3D5AFE" }}>
             <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.18em", color: "rgba(255,255,255,0.45)", marginBottom: "14px" }}>
               WEBSITE TRAFFIC
             </div>
-            <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 900, fontSize: "clamp(40px, 5vw, 64px)", lineHeight: 1, color: "#fff", marginBottom: "10px" }}>
+            <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 900, fontSize: "clamp(36px, 5vw, 64px)", lineHeight: 1, color: "#fff", marginBottom: "10px" }}>
               <AnimatedNumber target={30} suffix="%" active={visible} />
             </div>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "rgba(255,255,255,0.65)" }}>
@@ -791,11 +805,11 @@ function Metrics() {
           </div>
 
           {/* Med 2 */}
-          <div className="rounded-3xl p-7" style={{ background: "#FF6B5E" }}>
+          <div className="rounded-3xl p-6 sm:p-7" style={{ background: "#FF6B5E" }}>
             <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.18em", color: "rgba(255,255,255,0.45)", marginBottom: "14px" }}>
               YEARS EXPERIENCE
             </div>
-            <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 900, fontSize: "clamp(40px, 5vw, 64px)", lineHeight: 1, color: "#fff", marginBottom: "10px" }}>
+            <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 900, fontSize: "clamp(36px, 5vw, 64px)", lineHeight: 1, color: "#fff", marginBottom: "10px" }}>
               <AnimatedNumber target={6} suffix="+" active={visible} />
             </div>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "rgba(255,255,255,0.65)" }}>
@@ -804,21 +818,21 @@ function Metrics() {
           </div>
 
           {/* Small metrics */}
-          <div className="rounded-2xl p-6" style={{ background: "#C7B8FF" }}>
+          <div className="rounded-2xl p-5 sm:p-6" style={{ background: "#C7B8FF" }}>
             <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.16em", color: "rgba(23,23,23,0.45)", marginBottom: "10px" }}>EMAIL OPEN RATE</div>
-            <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 900, fontSize: "30px", color: "#171717" }}>25–30%</div>
+            <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 900, fontSize: "28px", color: "#171717" }}>25–30%</div>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "rgba(23,23,23,0.5)", marginTop: "4px" }}>At Ambit Software</p>
           </div>
 
-          <div className="rounded-2xl p-6" style={{ background: "rgba(247,242,232,0.06)", border: "1px solid rgba(247,242,232,0.08)" }}>
+          <div className="rounded-2xl p-5 sm:p-6" style={{ background: "rgba(247,242,232,0.06)", border: "1px solid rgba(247,242,232,0.08)" }}>
             <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.16em", color: "rgba(247,242,232,0.35)", marginBottom: "10px" }}>EMAIL CTR</div>
-            <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 900, fontSize: "30px", color: "#F7F2E8" }}>3–5%</div>
+            <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 900, fontSize: "28px", color: "#F7F2E8" }}>3–5%</div>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "rgba(247,242,232,0.35)", marginTop: "4px" }}>At Ambit Software</p>
           </div>
 
-          <div className="col-span-2 rounded-2xl p-6" style={{ background: "rgba(247,242,232,0.04)", border: "1px solid rgba(247,242,232,0.06)" }}>
+          <div className="col-span-1 sm:col-span-2 rounded-2xl p-5 sm:p-6" style={{ background: "rgba(247,242,232,0.04)", border: "1px solid rgba(247,242,232,0.06)" }}>
             <div style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.16em", color: "rgba(247,242,232,0.35)", marginBottom: "10px" }}>ANNUAL EVENTS</div>
-            <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 900, fontSize: "30px", color: "#C7F36B", marginBottom: "6px" }}>4–6 events</div>
+            <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 900, fontSize: "28px", color: "#C7F36B", marginBottom: "6px" }}>4–6 events</div>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "rgba(247,242,232,0.4)" }}>National and international corporate events planned annually</p>
           </div>
         </div>
@@ -986,12 +1000,12 @@ function WorkCard({ study, index, onOpen, onViewImage }: { study: CaseStudy; ind
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ delay: 0.06 }}
-      className={`grid lg:grid-cols-2 gap-12 items-center mb-24 ${isEven ? "" : "lg:flex-row-reverse"}`}
+      className={`grid lg:grid-cols-2 gap-6 lg:gap-12 items-center mb-16 lg:mb-24 ${isEven ? "" : "lg:flex-row-reverse"}`}
     >
-      {/* Visual — clicking image opens full-image lightbox */}
+      {/* Visual */}
       <div
         className={`relative rounded-3xl overflow-hidden cursor-pointer group ${isEven ? "" : "lg:order-2"}`}
-        style={{ background: study.color, minHeight: "380px" }}
+        style={{ background: study.color, minHeight: "260px" }}
         onClick={() => projectImage ? onViewImage(projectImage, study.title) : onOpen(study)}
       >
         {projectImage ? (
@@ -999,20 +1013,20 @@ function WorkCard({ study, index, onOpen, onViewImage }: { study: CaseStudy; ind
             <img
               src={projectImage}
               alt={study.title}
-              style={{ width: "100%", height: "100%", minHeight: "380px", objectFit: "cover", objectPosition: "top", display: "block" }}
+              style={{ width: "100%", height: "100%", minHeight: "260px", objectFit: "cover", objectPosition: "top", display: "block" }}
             />
-            {/* Tag overlay at bottom */}
-            <div className="absolute bottom-0 left-0 right-0 px-6 py-4" style={{ background: "linear-gradient(to top, rgba(23,23,23,0.85) 0%, transparent 100%)" }}>
-              <div className="inline-block px-4 py-2 rounded-full" style={{ background: study.accentColor }}>
-                <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.16em", color: study.accentColor === "#171717" ? "#C7F36B" : study.accentColor === "#C7F36B" ? "#171717" : "#fff" }}>
+            {/* Tag overlay */}
+            <div className="absolute bottom-0 left-0 right-0 px-4 sm:px-6 py-3 sm:py-4" style={{ background: "linear-gradient(to top, rgba(23,23,23,0.85) 0%, transparent 100%)" }}>
+              <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full max-w-full overflow-hidden" style={{ background: study.accentColor }}>
+                <span className="truncate block" style={{ fontFamily: "'Manrope', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.14em", color: study.accentColor === "#171717" ? "#C7F36B" : study.accentColor === "#C7F36B" ? "#171717" : "#fff" }}>
                   {study.tag}
                 </span>
               </div>
             </div>
           </>
         ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center p-8" style={{ minHeight: "380px" }}>
-            <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "80px", fontWeight: 900, color: study.textColor === "#fff" ? "rgba(255,255,255,0.08)" : "rgba(23,23,23,0.06)", lineHeight: 1 }}>
+          <div className="w-full h-full flex flex-col items-center justify-center p-6 sm:p-8" style={{ minHeight: "260px" }}>
+            <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "60px", fontWeight: 900, color: study.textColor === "#fff" ? "rgba(255,255,255,0.08)" : "rgba(23,23,23,0.06)", lineHeight: 1 }}>
               {study.number}
             </span>
             <div className="mt-4 px-4 py-2 rounded-full" style={{ background: study.accentColor }}>
@@ -1063,15 +1077,15 @@ function WorkCard({ study, index, onOpen, onViewImage }: { study: CaseStudy; ind
             <Tag style={{ background: "rgba(23,23,23,0.06)", color: "rgba(23,23,23,0.45)" }}>+{study.contributions.length - 5} more</Tag>
           )}
         </div>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-col sm:flex-row flex-wrap gap-3">
           <button onClick={() => onOpen(study)}
-            className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all hover:gap-4"
+            className="flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all hover:gap-4 w-full sm:w-auto"
             style={{ background: "#171717", color: "#F7F2E8", fontFamily: "'DM Sans', sans-serif" }}>
             See the Story <ArrowRight size={14} />
           </button>
           {projectImage && (
             <button onClick={() => onViewImage(projectImage, study.title)}
-              className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all hover:opacity-75"
+              className="flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all hover:opacity-75 w-full sm:w-auto"
               style={{ border: "1.5px solid rgba(23,23,23,0.22)", color: "#171717", fontFamily: "'DM Sans', sans-serif", background: "transparent" }}>
               View Image
             </button>
@@ -1227,17 +1241,17 @@ function Gallery() {
   const [lightbox, setLightbox] = useState<GalleryItem | null>(null);
   const filtered = filter === "All" ? (galleryItems as GalleryItem[]) : (galleryItems as GalleryItem[]).filter((g) => g.category === filter);
   return (
-    <section className="py-24 px-6" style={{ background: "#F7F2E8" }}>
+    <section className="py-16 sm:py-24 px-4 sm:px-6" style={{ background: "#F7F2E8" }}>
       <div className="max-w-7xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10">
           <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.22em", color: "#3D5AFE" }}>CREATIVE WORK</span>
           <h2 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(24px, 3.5vw, 44px)", fontWeight: 900, lineHeight: 1.1, color: "#171717", margin: "14px 0 20px" }}>
             A little more from the marketing desk.
           </h2>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex overflow-x-auto pb-2 sm:pb-0 sm:flex-wrap gap-2 max-w-full">
             {galleryCategories.map((cat) => (
               <button key={cat} onClick={() => setFilter(cat)}
-                className="px-4 py-2 rounded-full text-sm font-medium transition-all"
+                className="px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap"
                 style={{
                   fontFamily: "'DM Sans', sans-serif",
                   background: filter === cat ? "#171717" : "transparent",
@@ -1251,7 +1265,7 @@ function Gallery() {
           </div>
         </motion.div>
 
-        <motion.div layout className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {filtered.map((item, idx) => (
             <motion.div
               key={`${item.title}-${filter}`}
@@ -1338,11 +1352,10 @@ function Gallery() {
 // ─── Expertise ────────────────────────────────────────────────────────────────
 function Expertise() {
   return (
-    <section id="expertise" className="py-24 px-6" style={{ background: "#F7F2E8" }}>
+    <section id="expertise" className="py-16 sm:py-24 px-4 sm:px-6" style={{ background: "#F7F2E8" }}>
       <div className="max-w-7xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
           <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.22em", color: "#FF6B5E" }}>EXPERTISE</span>
-          {/* Updated heading */}
           <h2 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(28px, 4vw, 52px)", fontWeight: 900, lineHeight: 1.1, color: "#171717", margin: "14px 0 12px" }}>
             What I manage across the marketing function
           </h2>
@@ -1351,7 +1364,7 @@ function Expertise() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {expertiseCards.map((card, i) => (
             <motion.div
               key={card.title}
@@ -1379,9 +1392,9 @@ function Expertise() {
 // ─── Journey ──────────────────────────────────────────────────────────────────
 function Journey() {
   return (
-    <section id="journey" className="py-24 px-6" style={{ background: "#171717" }}>
+    <section id="journey" className="py-16 sm:py-24 px-4 sm:px-6" style={{ background: "#171717" }}>
       <div className="max-w-4xl mx-auto">
-        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
+        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12 sm:mb-16">
           <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.22em", color: "#C7F36B" }}>JOURNEY</span>
           <h2 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(28px, 4vw, 52px)", fontWeight: 900, lineHeight: 1.1, color: "#F7F2E8", marginTop: "14px" }}>
             The journey so far
@@ -1390,8 +1403,8 @@ function Journey() {
 
         <div className="relative">
           {/* Line */}
-          <div className="absolute left-7 top-4 bottom-4 w-px" style={{ background: "rgba(247,242,232,0.08)" }} />
-          <div className="space-y-10">
+          <div className="absolute left-3 sm:left-7 top-4 bottom-4 w-px" style={{ background: "rgba(247,242,232,0.08)" }} />
+          <div className="space-y-8 sm:space-y-10">
             {journeyData.map((item, i) => (
               <motion.div
                 key={item.company}
@@ -1399,19 +1412,19 @@ function Journey() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ delay: i * 0.08 }}
-                className="relative pl-20"
+                className="relative pl-10 sm:pl-20"
               >
                 {/* Dot */}
-                <div className="absolute left-4 top-5 w-6 h-6 rounded-full flex items-center justify-center" style={{ background: item.color }}>
+                <div className="absolute left-0 sm:left-4 top-5 w-6 h-6 rounded-full flex items-center justify-center" style={{ background: item.color }}>
                   <div className="w-2 h-2 rounded-full" style={{ background: "#171717" }} />
                 </div>
-                <div className="rounded-2xl p-6" style={{ background: "rgba(247,242,232,0.04)", border: "1px solid rgba(247,242,232,0.07)" }}>
-                  <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
+                <div className="rounded-2xl p-5 sm:p-6" style={{ background: "rgba(247,242,232,0.04)", border: "1px solid rgba(247,242,232,0.07)" }}>
+                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 sm:gap-3 mb-3">
                     <div>
                       <h3 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "16px", fontWeight: 900, color: "#F7F2E8", letterSpacing: "0.02em" }}>{item.company}</h3>
                       <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: item.color }}>{item.role}</span>
                     </div>
-                    <span className="px-3 py-1.5 rounded-full text-xs" style={{ background: "rgba(247,242,232,0.06)", color: "rgba(247,242,232,0.4)", fontFamily: "'DM Sans', sans-serif" }}>
+                    <span className="self-start px-3 py-1 rounded-full text-xs" style={{ background: "rgba(247,242,232,0.06)", color: "rgba(247,242,232,0.4)", fontFamily: "'DM Sans', sans-serif" }}>
                       {item.period}
                     </span>
                   </div>
@@ -1435,13 +1448,14 @@ function Journey() {
 // ─── Tools ────────────────────────────────────────────────────────────────────
 function ToolsRow({ tools, color, reverse }: { tools: string[]; color: string; reverse: boolean }) {
   const textColor = color === "#C7F36B" || color === "#C7B8FF" ? "#171717" : "#fff";
-  // Repeat tools enough times for a seamless scroll
-  const repeated = [...tools, ...tools, ...tools, ...tools, ...tools, ...tools, ...tools, ...tools];
+  // Guarantee a sufficiently wide list of tool pills to span any screen seamlessly from the start
+  const count = Math.ceil(24 / tools.length);
+  const repeated = Array(count * 2).fill(tools).flat();
   return (
     <div className="overflow-hidden py-2">
       <motion.div className="flex items-center"
         animate={{ x: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
-        transition={{ duration: 22, repeat: Infinity, ease: "linear" }}>
+        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}>
         {repeated.map((tool, i) => (
           <span key={i} className="inline-flex items-center px-5 py-2.5 rounded-full font-semibold text-sm mr-4 flex-shrink-0"
             style={{ background: color, color: textColor, fontFamily: "'Manrope', sans-serif" }}>
@@ -1566,7 +1580,7 @@ function SWOT() {
   ];
 
   return (
-    <section id="swot" className="py-24 px-6" style={{ background: "#F7F2E8" }}>
+    <section id="swot" className="py-16 sm:py-24 px-4 sm:px-6" style={{ background: "#F7F2E8" }}>
       <div className="max-w-7xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
           <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.22em", color: "#FF6B5E" }}>PROFESSIONAL SWOT</span>
@@ -1578,7 +1592,7 @@ function SWOT() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-4 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           {quadrants.map((q, i) => (
             <motion.div
               key={q.label}
@@ -1586,8 +1600,8 @@ function SWOT() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="rounded-3xl p-8 transition-transform hover:-translate-y-1 hover:shadow-xl"
-              style={{ background: q.color, minHeight: "220px" }}
+              className="rounded-3xl p-6 sm:p-8 transition-transform hover:-translate-y-1 hover:shadow-xl"
+              style={{ background: q.color, minHeight: "200px" }}
             >
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0"
@@ -1610,7 +1624,7 @@ function SWOT() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="rounded-2xl p-6 text-center"
+          className="rounded-2xl p-5 sm:p-6 text-center"
           style={{ background: "#171717" }}
         >
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", lineHeight: 1.75, color: "rgba(247,242,232,0.7)", maxWidth: "640px", margin: "0 auto" }}>
@@ -1626,10 +1640,10 @@ function SWOT() {
 function Education() {
   const certs = ["HubSpot Social Media Certification", "HubSpot Email Marketing Certification", "Digital Marketing Certification from LIPS India"];
   return (
-    <section id="education" className="py-20 px-6" style={{ background: "#F7F2E8" }}>
+    <section id="education" className="py-16 sm:py-20 px-4 sm:px-6" style={{ background: "#F7F2E8" }}>
       <div className="max-w-5xl mx-auto">
         <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.22em", color: "#FF6B5E", display: "block", marginBottom: "24px" }}>EDUCATION & CERTIFICATIONS</span>
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {[
             { degree: "MBA IN MARKETING", school: "MIT World Peace University", year: "2017–2019" },
             { degree: "BBA IN MARKETING", school: "DCCL, Latur", year: "2014–2017" },
@@ -1660,30 +1674,30 @@ function Education() {
 // ─── Contact ──────────────────────────────────────────────────────────────────
 function Contact() {
   return (
-    <section id="contact" className="py-28 px-6" style={{ background: "#171717" }}>
+    <section id="contact" className="py-20 sm:py-28 px-4 sm:px-6" style={{ background: "#171717" }}>
       <div className="max-w-4xl mx-auto text-center">
         <motion.div initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: "11px", fontWeight: 700, letterSpacing: "0.22em", color: "rgba(247,242,232,0.35)" }}>
             HAVE A CAMPAIGN, ROLE OR IDEA IN MIND?
           </span>
-          <h2 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(30px, 5vw, 62px)", fontWeight: 900, lineHeight: 1.1, color: "#F7F2E8", margin: "20px 0 18px" }}>
+          <h2 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(26px, 5vw, 62px)", fontWeight: 900, lineHeight: 1.1, color: "#F7F2E8", margin: "20px 0 18px" }}>
             {"Let's turn the next idea into something people notice — and remember."}
           </h2>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", lineHeight: 1.75, color: "rgba(247,242,232,0.48)", maxWidth: "520px", margin: "0 auto 40px" }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", smFontSize: "16px", lineHeight: 1.75, color: "rgba(247,242,232,0.48)", maxWidth: "520px", margin: "0 auto 40px" }}>
             {"I'm open to conversations around integrated marketing, corporate communications, brand building, B2B campaigns and marketing operations."}
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 mb-16">
             <a href="mailto:shreya.k0405@gmail.com"
-              className="flex items-center gap-2 px-7 py-4 rounded-full font-semibold transition-opacity hover:opacity-85"
+              className="flex items-center justify-center gap-2 px-7 py-4 rounded-full font-semibold transition-opacity hover:opacity-85 w-full sm:w-auto"
               style={{ background: "#3D5AFE", color: "#fff", fontFamily: "'DM Sans', sans-serif" }}>
               <Mail size={17} /> Email Me
             </a>
             <a href="https://www.linkedin.com/in/shreya-k-/" target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-2 px-7 py-4 rounded-full font-semibold transition-opacity hover:opacity-70 border"
+              className="flex items-center justify-center gap-2 px-7 py-4 rounded-full font-semibold transition-opacity hover:opacity-70 border w-full sm:w-auto"
               style={{ borderColor: "rgba(247,242,232,0.18)", color: "#F7F2E8", fontFamily: "'DM Sans', sans-serif" }}>
               <ExternalLink size={17} /> Connect on LinkedIn
             </a>
-            <button className="flex items-center gap-2 px-7 py-4 rounded-full font-semibold transition-opacity hover:opacity-70 border"
+            <button className="flex items-center justify-center gap-2 px-7 py-4 rounded-full font-semibold transition-opacity hover:opacity-70 border w-full sm:w-auto"
               style={{ borderColor: "rgba(247,242,232,0.18)", color: "#F7F2E8", fontFamily: "'DM Sans', sans-serif" }}>
               <Download size={17} /> Download My CV
             </button>
@@ -1702,9 +1716,9 @@ function Contact() {
 // ─── Footer ───────────────────────────────────────────────────────────────────
 function Footer() {
   return (
-    <footer className="px-6 py-8" style={{ background: "#171717", borderTop: "1px solid rgba(247,242,232,0.06)" }}>
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
-        <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "rgba(247,242,232,0.35)", textAlign: "center" }}>
+    <footer className="px-4 sm:px-6 py-8" style={{ background: "#171717", borderTop: "1px solid rgba(247,242,232,0.06)" }}>
+      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+        <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "rgba(247,242,232,0.35)" }}>
           Structure with clarity. Communication with purpose. Execution with consistency.
         </p>
         <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "rgba(247,242,232,0.2)" }}>
@@ -1731,7 +1745,7 @@ function BackToTop() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 16 }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full flex items-center justify-center transition-opacity hover:opacity-75"
+          className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-50 w-12 h-12 rounded-full flex items-center justify-center transition-opacity hover:opacity-75"
           style={{ background: "#171717", boxShadow: "0 4px 20px rgba(0,0,0,0.2)" }}>
           <ChevronUp size={20} color="#F7F2E8" />
         </motion.button>
